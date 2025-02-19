@@ -10,9 +10,6 @@ import org.apache.avro.ipc.specific.SpecificRequestor;
 import org.apache.avro.ipc.specific.SpecificResponder;
 import org.apache.avro.util.Utf8;
 
-import example.proto.Mail;
-import example.proto.Message;
-
 /**
  * Start a server, attach a client, and send a message.
  */
