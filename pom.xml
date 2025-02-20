@@ -15,6 +15,7 @@
         <avro.version>1.11.4</avro.version>
         <compiler-plugin.version>3.8.0</compiler-plugin.version>
         <junit.version>5.11.4</junit.version>
+        <hadoop.version>3.4.1</hadoop.version>
     </properties>
 
     <dependencies>
@@ -45,6 +46,16 @@
             <groupId>org.apache.avro</groupId>
             <artifactId>avro-ipc-netty</artifactId>
             <version>${avro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro-mapred</artifactId>
+            <version>${avro.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.hadoop</groupId>
+            <artifactId>hadoop-client</artifactId>
+            <version>${hadoop.version}</version>
         </dependency>
     </dependencies>
 
