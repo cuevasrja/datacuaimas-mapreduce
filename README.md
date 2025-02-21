@@ -26,3 +26,25 @@ Donde:
 - exec:java: Ejecuta el programa
 - -Dexec.mainClass=com.datacuaimas.avro.Main: Clase principal del programa
 - -Dexec.args='avro_user pat Hello_World': Argumentos del programa (Opconal y depende de la clase principal)
+
+## Caso 1 
+
+Para ejecutar el caso 1 se debe ejecutar
+
+```bash
+mvn -q exec:java -Dexec.mainClass=com.datacuaimas.avro.GenericMain
+```
+
+## Caso 2 
+
+Para ejecutar el caso 2 se debe ejecutar primero el generador de Users
+
+```bash
+mvn -q exec:java -Dexec.mainClass=com.datacuaimas.avro.GenerateData
+```
+
+Luego, ejecutar
+
+```bash
+mvn exec:java -q -Dexec.mainClass=com.datacuaimas.avro.MapredColorCount -Dexec.args="input output"
+```
