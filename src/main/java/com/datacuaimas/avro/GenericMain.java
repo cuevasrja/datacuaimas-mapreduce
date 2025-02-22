@@ -17,7 +17,7 @@ import org.apache.avro.io.DatumWriter;
 
 public class GenericMain {
         public static void main(String[] args) throws IOException{
-                Schema schema = new Schema.Parser().parse(new File("src/main/java/com/datacuaimas/avro/usersSchema.avsc"));          
+                Schema schema = new Schema.Parser().parse(new File("src/main/avro/users.avsc"));          
                 GenericRecord user1 = new GenericData.Record(schema);
                 user1.put("name", "Alyssa");
                 user1.put("favorite_number", 256);

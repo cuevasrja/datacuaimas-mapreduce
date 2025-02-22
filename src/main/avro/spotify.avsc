@@ -32,6 +32,6 @@
      {"name": "artist_name", "type": "string"},
      {"name": "artist_popularity", "type": "int"},
      {"name": "followers", "type": "int"},
-     {"name": "genre_id", "type": "string"},
+     {"name": "genre_id", "type": "string"}
  ]
 }
