@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class spotify extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 6829439570602881984L;
+  private static final long serialVersionUID = 6689312053835716127L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"spotify\",\"namespace\":\"spotify.avro\",\"fields\":[{\"name\":\"id\",\"type\":\"string\"},{\"name\":\"track_name\",\"type\":\"string\"},{\"name\":\"disc_number\",\"type\":\"int\"},{\"name\":\"duration\",\"type\":\"int\"},{\"name\":\"explicit\",\"type\":\"int\"},{\"name\":\"audio_feature_id\",\"type\":\"string\"},{\"name\":\"preview_url\",\"type\":\"string\"},{\"name\":\"track_number\",\"type\":\"int\"},{\"name\":\"popularity\",\"type\":\"int\"},{\"name\":\"is_playable\",\"type\":[\"int\",\"null\"]},{\"name\":\"acousticness\",\"type\":\"float\"},{\"name\":\"danceability\",\"type\":\"float\"},{\"name\":\"energy\",\"type\":\"float\"},{\"name\":\"instrumentalness\",\"type\":\"float\"},{\"name\":\"key\",\"type\":\"int\"},{\"name\":\"liveness\",\"type\":\"float\"},{\"name\":\"loudness\",\"type\":\"float\"},{\"name\":\"mode\",\"type\":\"int\"},{\"name\":\"speechiness\",\"type\":\"float\"},{\"name\":\"tempo\",\"type\":\"float\"},{\"name\":\"time_signature\",\"type\":\"int\"},{\"name\":\"valence\",\"type\":\"float\"},{\"name\":\"album_name\",\"type\":\"string\"},{\"name\":\"album_group\",\"type\":\"string\"},{\"name\":\"album_type\",\"type\":\"string\"},{\"name\":\"release_date\",\"type\":\"string\"},{\"name\":\"album_popularity\",\"type\":\"int\"},{\"name\":\"artist_name\",\"type\":\"string\"},{\"name\":\"artist_popularity\",\"type\":\"int\"},{\"name\":\"followers\",\"type\":\"int\"},{\"name\":\"genre_id\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"spotify\",\"namespace\":\"spotify.avro\",\"fields\":[{\"name\":\"id\",\"type\":[\"string\",\"null\"]},{\"name\":\"track_name\",\"type\":[\"string\",\"null\"]},{\"name\":\"disc_number\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"duration\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"explicit\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"audio_feature_id\",\"type\":[\"string\",\"null\"]},{\"name\":\"preview_url\",\"type\":[\"string\",\"null\"]},{\"name\":\"track_number\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"popularity\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"is_playable\",\"type\":[\"int\",\"null\",\"string\"]},{\"name\":\"acousticness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"danceability\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"energy\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"instrumentalness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"key\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"liveness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"loudness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"mode\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"speechiness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"tempo\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"time_signature\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"valence\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"album_name\",\"type\":[\"string\",\"null\"]},{\"name\":\"album_group\",\"type\":[\"string\",\"null\"]},{\"name\":\"album_type\",\"type\":[\"string\",\"null\"]},{\"name\":\"release_date\",\"type\":[\"string\",\"null\"]},{\"name\":\"album_popularity\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"artist_name\",\"type\":[\"string\",\"null\"]},{\"name\":\"artist_popularity\",\"type\":[\"int\",\"null\",\"string\"]},{\"name\":\"followers\",\"type\":[\"int\",\"null\",\"string\"]},{\"name\":\"genre_id\",\"type\":[\"string\",\"null\"]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -75,34 +75,34 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
 
   private java.lang.CharSequence id;
   private java.lang.CharSequence track_name;
-  private int disc_number;
-  private int duration;
-  private int explicit;
+  private java.lang.Object disc_number;
+  private java.lang.Object duration;
+  private java.lang.Object explicit;
   private java.lang.CharSequence audio_feature_id;
   private java.lang.CharSequence preview_url;
-  private int track_number;
-  private int popularity;
-  private java.lang.Integer is_playable;
-  private float acousticness;
-  private float danceability;
-  private float energy;
-  private float instrumentalness;
-  private int key;
-  private float liveness;
-  private float loudness;
-  private int mode;
-  private float speechiness;
-  private float tempo;
-  private int time_signature;
-  private float valence;
+  private java.lang.Object track_number;
+  private java.lang.Object popularity;
+  private java.lang.Object is_playable;
+  private java.lang.Object acousticness;
+  private java.lang.Object danceability;
+  private java.lang.Object energy;
+  private java.lang.Object instrumentalness;
+  private java.lang.Object key;
+  private java.lang.Object liveness;
+  private java.lang.Object loudness;
+  private java.lang.Object mode;
+  private java.lang.Object speechiness;
+  private java.lang.Object tempo;
+  private java.lang.Object time_signature;
+  private java.lang.Object valence;
   private java.lang.CharSequence album_name;
   private java.lang.CharSequence album_group;
   private java.lang.CharSequence album_type;
   private java.lang.CharSequence release_date;
-  private int album_popularity;
+  private java.lang.Object album_popularity;
   private java.lang.CharSequence artist_name;
-  private int artist_popularity;
-  private int followers;
+  private java.lang.Object artist_popularity;
+  private java.lang.Object followers;
   private java.lang.CharSequence genre_id;
 
   /**
@@ -146,7 +146,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param followers The new value for followers
    * @param genre_id The new value for genre_id
    */
-  public spotify(java.lang.CharSequence id, java.lang.CharSequence track_name, java.lang.Integer disc_number, java.lang.Integer duration, java.lang.Integer explicit, java.lang.CharSequence audio_feature_id, java.lang.CharSequence preview_url, java.lang.Integer track_number, java.lang.Integer popularity, java.lang.Integer is_playable, java.lang.Float acousticness, java.lang.Float danceability, java.lang.Float energy, java.lang.Float instrumentalness, java.lang.Integer key, java.lang.Float liveness, java.lang.Float loudness, java.lang.Integer mode, java.lang.Float speechiness, java.lang.Float tempo, java.lang.Integer time_signature, java.lang.Float valence, java.lang.CharSequence album_name, java.lang.CharSequence album_group, java.lang.CharSequence album_type, java.lang.CharSequence release_date, java.lang.Integer album_popularity, java.lang.CharSequence artist_name, java.lang.Integer artist_popularity, java.lang.Integer followers, java.lang.CharSequence genre_id) {
+  public spotify(java.lang.CharSequence id, java.lang.CharSequence track_name, java.lang.Object disc_number, java.lang.Object duration, java.lang.Object explicit, java.lang.CharSequence audio_feature_id, java.lang.CharSequence preview_url, java.lang.Object track_number, java.lang.Object popularity, java.lang.Object is_playable, java.lang.Object acousticness, java.lang.Object danceability, java.lang.Object energy, java.lang.Object instrumentalness, java.lang.Object key, java.lang.Object liveness, java.lang.Object loudness, java.lang.Object mode, java.lang.Object speechiness, java.lang.Object tempo, java.lang.Object time_signature, java.lang.Object valence, java.lang.CharSequence album_name, java.lang.CharSequence album_group, java.lang.CharSequence album_type, java.lang.CharSequence release_date, java.lang.Object album_popularity, java.lang.CharSequence artist_name, java.lang.Object artist_popularity, java.lang.Object followers, java.lang.CharSequence genre_id) {
     this.id = id;
     this.track_name = track_name;
     this.disc_number = disc_number;
@@ -232,34 +232,34 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
     switch (field$) {
     case 0: id = (java.lang.CharSequence)value$; break;
     case 1: track_name = (java.lang.CharSequence)value$; break;
-    case 2: disc_number = (java.lang.Integer)value$; break;
-    case 3: duration = (java.lang.Integer)value$; break;
-    case 4: explicit = (java.lang.Integer)value$; break;
+    case 2: disc_number = value$; break;
+    case 3: duration = value$; break;
+    case 4: explicit = value$; break;
     case 5: audio_feature_id = (java.lang.CharSequence)value$; break;
     case 6: preview_url = (java.lang.CharSequence)value$; break;
-    case 7: track_number = (java.lang.Integer)value$; break;
-    case 8: popularity = (java.lang.Integer)value$; break;
-    case 9: is_playable = (java.lang.Integer)value$; break;
-    case 10: acousticness = (java.lang.Float)value$; break;
-    case 11: danceability = (java.lang.Float)value$; break;
-    case 12: energy = (java.lang.Float)value$; break;
-    case 13: instrumentalness = (java.lang.Float)value$; break;
-    case 14: key = (java.lang.Integer)value$; break;
-    case 15: liveness = (java.lang.Float)value$; break;
-    case 16: loudness = (java.lang.Float)value$; break;
-    case 17: mode = (java.lang.Integer)value$; break;
-    case 18: speechiness = (java.lang.Float)value$; break;
-    case 19: tempo = (java.lang.Float)value$; break;
-    case 20: time_signature = (java.lang.Integer)value$; break;
-    case 21: valence = (java.lang.Float)value$; break;
+    case 7: track_number = value$; break;
+    case 8: popularity = value$; break;
+    case 9: is_playable = value$; break;
+    case 10: acousticness = value$; break;
+    case 11: danceability = value$; break;
+    case 12: energy = value$; break;
+    case 13: instrumentalness = value$; break;
+    case 14: key = value$; break;
+    case 15: liveness = value$; break;
+    case 16: loudness = value$; break;
+    case 17: mode = value$; break;
+    case 18: speechiness = value$; break;
+    case 19: tempo = value$; break;
+    case 20: time_signature = value$; break;
+    case 21: valence = value$; break;
     case 22: album_name = (java.lang.CharSequence)value$; break;
     case 23: album_group = (java.lang.CharSequence)value$; break;
     case 24: album_type = (java.lang.CharSequence)value$; break;
     case 25: release_date = (java.lang.CharSequence)value$; break;
-    case 26: album_popularity = (java.lang.Integer)value$; break;
+    case 26: album_popularity = value$; break;
     case 27: artist_name = (java.lang.CharSequence)value$; break;
-    case 28: artist_popularity = (java.lang.Integer)value$; break;
-    case 29: followers = (java.lang.Integer)value$; break;
+    case 28: artist_popularity = value$; break;
+    case 29: followers = value$; break;
     case 30: genre_id = (java.lang.CharSequence)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
@@ -303,7 +303,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'disc_number' field.
    * @return The value of the 'disc_number' field.
    */
-  public int getDiscNumber() {
+  public java.lang.Object getDiscNumber() {
     return disc_number;
   }
 
@@ -312,7 +312,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'disc_number' field.
    * @param value the value to set.
    */
-  public void setDiscNumber(int value) {
+  public void setDiscNumber(java.lang.Object value) {
     this.disc_number = value;
   }
 
@@ -320,7 +320,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'duration' field.
    * @return The value of the 'duration' field.
    */
-  public int getDuration() {
+  public java.lang.Object getDuration() {
     return duration;
   }
 
@@ -329,7 +329,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'duration' field.
    * @param value the value to set.
    */
-  public void setDuration(int value) {
+  public void setDuration(java.lang.Object value) {
     this.duration = value;
   }
 
@@ -337,7 +337,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'explicit' field.
    * @return The value of the 'explicit' field.
    */
-  public int getExplicit() {
+  public java.lang.Object getExplicit() {
     return explicit;
   }
 
@@ -346,7 +346,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'explicit' field.
    * @param value the value to set.
    */
-  public void setExplicit(int value) {
+  public void setExplicit(java.lang.Object value) {
     this.explicit = value;
   }
 
@@ -388,7 +388,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'track_number' field.
    * @return The value of the 'track_number' field.
    */
-  public int getTrackNumber() {
+  public java.lang.Object getTrackNumber() {
     return track_number;
   }
 
@@ -397,7 +397,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'track_number' field.
    * @param value the value to set.
    */
-  public void setTrackNumber(int value) {
+  public void setTrackNumber(java.lang.Object value) {
     this.track_number = value;
   }
 
@@ -405,7 +405,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'popularity' field.
    * @return The value of the 'popularity' field.
    */
-  public int getPopularity() {
+  public java.lang.Object getPopularity() {
     return popularity;
   }
 
@@ -414,7 +414,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'popularity' field.
    * @param value the value to set.
    */
-  public void setPopularity(int value) {
+  public void setPopularity(java.lang.Object value) {
     this.popularity = value;
   }
 
@@ -422,7 +422,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'is_playable' field.
    * @return The value of the 'is_playable' field.
    */
-  public java.lang.Integer getIsPlayable() {
+  public java.lang.Object getIsPlayable() {
     return is_playable;
   }
 
@@ -431,7 +431,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'is_playable' field.
    * @param value the value to set.
    */
-  public void setIsPlayable(java.lang.Integer value) {
+  public void setIsPlayable(java.lang.Object value) {
     this.is_playable = value;
   }
 
@@ -439,7 +439,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'acousticness' field.
    * @return The value of the 'acousticness' field.
    */
-  public float getAcousticness() {
+  public java.lang.Object getAcousticness() {
     return acousticness;
   }
 
@@ -448,7 +448,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'acousticness' field.
    * @param value the value to set.
    */
-  public void setAcousticness(float value) {
+  public void setAcousticness(java.lang.Object value) {
     this.acousticness = value;
   }
 
@@ -456,7 +456,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'danceability' field.
    * @return The value of the 'danceability' field.
    */
-  public float getDanceability() {
+  public java.lang.Object getDanceability() {
     return danceability;
   }
 
@@ -465,7 +465,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'danceability' field.
    * @param value the value to set.
    */
-  public void setDanceability(float value) {
+  public void setDanceability(java.lang.Object value) {
     this.danceability = value;
   }
 
@@ -473,7 +473,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'energy' field.
    * @return The value of the 'energy' field.
    */
-  public float getEnergy() {
+  public java.lang.Object getEnergy() {
     return energy;
   }
 
@@ -482,7 +482,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'energy' field.
    * @param value the value to set.
    */
-  public void setEnergy(float value) {
+  public void setEnergy(java.lang.Object value) {
     this.energy = value;
   }
 
@@ -490,7 +490,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'instrumentalness' field.
    * @return The value of the 'instrumentalness' field.
    */
-  public float getInstrumentalness() {
+  public java.lang.Object getInstrumentalness() {
     return instrumentalness;
   }
 
@@ -499,7 +499,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'instrumentalness' field.
    * @param value the value to set.
    */
-  public void setInstrumentalness(float value) {
+  public void setInstrumentalness(java.lang.Object value) {
     this.instrumentalness = value;
   }
 
@@ -507,7 +507,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'key' field.
    * @return The value of the 'key' field.
    */
-  public int getKey() {
+  public java.lang.Object getKey() {
     return key;
   }
 
@@ -516,7 +516,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'key' field.
    * @param value the value to set.
    */
-  public void setKey(int value) {
+  public void setKey(java.lang.Object value) {
     this.key = value;
   }
 
@@ -524,7 +524,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'liveness' field.
    * @return The value of the 'liveness' field.
    */
-  public float getLiveness() {
+  public java.lang.Object getLiveness() {
     return liveness;
   }
 
@@ -533,7 +533,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'liveness' field.
    * @param value the value to set.
    */
-  public void setLiveness(float value) {
+  public void setLiveness(java.lang.Object value) {
     this.liveness = value;
   }
 
@@ -541,7 +541,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'loudness' field.
    * @return The value of the 'loudness' field.
    */
-  public float getLoudness() {
+  public java.lang.Object getLoudness() {
     return loudness;
   }
 
@@ -550,7 +550,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'loudness' field.
    * @param value the value to set.
    */
-  public void setLoudness(float value) {
+  public void setLoudness(java.lang.Object value) {
     this.loudness = value;
   }
 
@@ -558,7 +558,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'mode' field.
    * @return The value of the 'mode' field.
    */
-  public int getMode() {
+  public java.lang.Object getMode() {
     return mode;
   }
 
@@ -567,7 +567,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'mode' field.
    * @param value the value to set.
    */
-  public void setMode(int value) {
+  public void setMode(java.lang.Object value) {
     this.mode = value;
   }
 
@@ -575,7 +575,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'speechiness' field.
    * @return The value of the 'speechiness' field.
    */
-  public float getSpeechiness() {
+  public java.lang.Object getSpeechiness() {
     return speechiness;
   }
 
@@ -584,7 +584,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'speechiness' field.
    * @param value the value to set.
    */
-  public void setSpeechiness(float value) {
+  public void setSpeechiness(java.lang.Object value) {
     this.speechiness = value;
   }
 
@@ -592,7 +592,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'tempo' field.
    * @return The value of the 'tempo' field.
    */
-  public float getTempo() {
+  public java.lang.Object getTempo() {
     return tempo;
   }
 
@@ -601,7 +601,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'tempo' field.
    * @param value the value to set.
    */
-  public void setTempo(float value) {
+  public void setTempo(java.lang.Object value) {
     this.tempo = value;
   }
 
@@ -609,7 +609,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'time_signature' field.
    * @return The value of the 'time_signature' field.
    */
-  public int getTimeSignature() {
+  public java.lang.Object getTimeSignature() {
     return time_signature;
   }
 
@@ -618,7 +618,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'time_signature' field.
    * @param value the value to set.
    */
-  public void setTimeSignature(int value) {
+  public void setTimeSignature(java.lang.Object value) {
     this.time_signature = value;
   }
 
@@ -626,7 +626,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'valence' field.
    * @return The value of the 'valence' field.
    */
-  public float getValence() {
+  public java.lang.Object getValence() {
     return valence;
   }
 
@@ -635,7 +635,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'valence' field.
    * @param value the value to set.
    */
-  public void setValence(float value) {
+  public void setValence(java.lang.Object value) {
     this.valence = value;
   }
 
@@ -711,7 +711,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'album_popularity' field.
    * @return The value of the 'album_popularity' field.
    */
-  public int getAlbumPopularity() {
+  public java.lang.Object getAlbumPopularity() {
     return album_popularity;
   }
 
@@ -720,7 +720,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'album_popularity' field.
    * @param value the value to set.
    */
-  public void setAlbumPopularity(int value) {
+  public void setAlbumPopularity(java.lang.Object value) {
     this.album_popularity = value;
   }
 
@@ -745,7 +745,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'artist_popularity' field.
    * @return The value of the 'artist_popularity' field.
    */
-  public int getArtistPopularity() {
+  public java.lang.Object getArtistPopularity() {
     return artist_popularity;
   }
 
@@ -754,7 +754,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'artist_popularity' field.
    * @param value the value to set.
    */
-  public void setArtistPopularity(int value) {
+  public void setArtistPopularity(java.lang.Object value) {
     this.artist_popularity = value;
   }
 
@@ -762,7 +762,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Gets the value of the 'followers' field.
    * @return The value of the 'followers' field.
    */
-  public int getFollowers() {
+  public java.lang.Object getFollowers() {
     return followers;
   }
 
@@ -771,7 +771,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Sets the value of the 'followers' field.
    * @param value the value to set.
    */
-  public void setFollowers(int value) {
+  public void setFollowers(java.lang.Object value) {
     this.followers = value;
   }
 
@@ -835,34 +835,34 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
 
     private java.lang.CharSequence id;
     private java.lang.CharSequence track_name;
-    private int disc_number;
-    private int duration;
-    private int explicit;
+    private java.lang.Object disc_number;
+    private java.lang.Object duration;
+    private java.lang.Object explicit;
     private java.lang.CharSequence audio_feature_id;
     private java.lang.CharSequence preview_url;
-    private int track_number;
-    private int popularity;
-    private java.lang.Integer is_playable;
-    private float acousticness;
-    private float danceability;
-    private float energy;
-    private float instrumentalness;
-    private int key;
-    private float liveness;
-    private float loudness;
-    private int mode;
-    private float speechiness;
-    private float tempo;
-    private int time_signature;
-    private float valence;
+    private java.lang.Object track_number;
+    private java.lang.Object popularity;
+    private java.lang.Object is_playable;
+    private java.lang.Object acousticness;
+    private java.lang.Object danceability;
+    private java.lang.Object energy;
+    private java.lang.Object instrumentalness;
+    private java.lang.Object key;
+    private java.lang.Object liveness;
+    private java.lang.Object loudness;
+    private java.lang.Object mode;
+    private java.lang.Object speechiness;
+    private java.lang.Object tempo;
+    private java.lang.Object time_signature;
+    private java.lang.Object valence;
     private java.lang.CharSequence album_name;
     private java.lang.CharSequence album_group;
     private java.lang.CharSequence album_type;
     private java.lang.CharSequence release_date;
-    private int album_popularity;
+    private java.lang.Object album_popularity;
     private java.lang.CharSequence artist_name;
-    private int artist_popularity;
-    private int followers;
+    private java.lang.Object artist_popularity;
+    private java.lang.Object followers;
     private java.lang.CharSequence genre_id;
 
     /** Creates a new Builder */
@@ -1218,7 +1218,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'disc_number' field.
       * @return The value.
       */
-    public int getDiscNumber() {
+    public java.lang.Object getDiscNumber() {
       return disc_number;
     }
 
@@ -1228,7 +1228,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'disc_number'.
       * @return This builder.
       */
-    public spotify.Builder setDiscNumber(int value) {
+    public spotify.Builder setDiscNumber(java.lang.Object value) {
       validate(fields()[2], value);
       this.disc_number = value;
       fieldSetFlags()[2] = true;
@@ -1249,6 +1249,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearDiscNumber() {
+      disc_number = null;
       fieldSetFlags()[2] = false;
       return this;
     }
@@ -1257,7 +1258,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'duration' field.
       * @return The value.
       */
-    public int getDuration() {
+    public java.lang.Object getDuration() {
       return duration;
     }
 
@@ -1267,7 +1268,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'duration'.
       * @return This builder.
       */
-    public spotify.Builder setDuration(int value) {
+    public spotify.Builder setDuration(java.lang.Object value) {
       validate(fields()[3], value);
       this.duration = value;
       fieldSetFlags()[3] = true;
@@ -1288,6 +1289,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearDuration() {
+      duration = null;
       fieldSetFlags()[3] = false;
       return this;
     }
@@ -1296,7 +1298,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'explicit' field.
       * @return The value.
       */
-    public int getExplicit() {
+    public java.lang.Object getExplicit() {
       return explicit;
     }
 
@@ -1306,7 +1308,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'explicit'.
       * @return This builder.
       */
-    public spotify.Builder setExplicit(int value) {
+    public spotify.Builder setExplicit(java.lang.Object value) {
       validate(fields()[4], value);
       this.explicit = value;
       fieldSetFlags()[4] = true;
@@ -1327,6 +1329,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearExplicit() {
+      explicit = null;
       fieldSetFlags()[4] = false;
       return this;
     }
@@ -1415,7 +1418,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'track_number' field.
       * @return The value.
       */
-    public int getTrackNumber() {
+    public java.lang.Object getTrackNumber() {
       return track_number;
     }
 
@@ -1425,7 +1428,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'track_number'.
       * @return This builder.
       */
-    public spotify.Builder setTrackNumber(int value) {
+    public spotify.Builder setTrackNumber(java.lang.Object value) {
       validate(fields()[7], value);
       this.track_number = value;
       fieldSetFlags()[7] = true;
@@ -1446,6 +1449,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearTrackNumber() {
+      track_number = null;
       fieldSetFlags()[7] = false;
       return this;
     }
@@ -1454,7 +1458,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'popularity' field.
       * @return The value.
       */
-    public int getPopularity() {
+    public java.lang.Object getPopularity() {
       return popularity;
     }
 
@@ -1464,7 +1468,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'popularity'.
       * @return This builder.
       */
-    public spotify.Builder setPopularity(int value) {
+    public spotify.Builder setPopularity(java.lang.Object value) {
       validate(fields()[8], value);
       this.popularity = value;
       fieldSetFlags()[8] = true;
@@ -1485,6 +1489,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearPopularity() {
+      popularity = null;
       fieldSetFlags()[8] = false;
       return this;
     }
@@ -1493,7 +1498,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'is_playable' field.
       * @return The value.
       */
-    public java.lang.Integer getIsPlayable() {
+    public java.lang.Object getIsPlayable() {
       return is_playable;
     }
 
@@ -1503,7 +1508,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'is_playable'.
       * @return This builder.
       */
-    public spotify.Builder setIsPlayable(java.lang.Integer value) {
+    public spotify.Builder setIsPlayable(java.lang.Object value) {
       validate(fields()[9], value);
       this.is_playable = value;
       fieldSetFlags()[9] = true;
@@ -1533,7 +1538,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'acousticness' field.
       * @return The value.
       */
-    public float getAcousticness() {
+    public java.lang.Object getAcousticness() {
       return acousticness;
     }
 
@@ -1543,7 +1548,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'acousticness'.
       * @return This builder.
       */
-    public spotify.Builder setAcousticness(float value) {
+    public spotify.Builder setAcousticness(java.lang.Object value) {
       validate(fields()[10], value);
       this.acousticness = value;
       fieldSetFlags()[10] = true;
@@ -1564,6 +1569,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearAcousticness() {
+      acousticness = null;
       fieldSetFlags()[10] = false;
       return this;
     }
@@ -1572,7 +1578,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'danceability' field.
       * @return The value.
       */
-    public float getDanceability() {
+    public java.lang.Object getDanceability() {
       return danceability;
     }
 
@@ -1582,7 +1588,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'danceability'.
       * @return This builder.
       */
-    public spotify.Builder setDanceability(float value) {
+    public spotify.Builder setDanceability(java.lang.Object value) {
       validate(fields()[11], value);
       this.danceability = value;
       fieldSetFlags()[11] = true;
@@ -1603,6 +1609,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearDanceability() {
+      danceability = null;
       fieldSetFlags()[11] = false;
       return this;
     }
@@ -1611,7 +1618,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'energy' field.
       * @return The value.
       */
-    public float getEnergy() {
+    public java.lang.Object getEnergy() {
       return energy;
     }
 
@@ -1621,7 +1628,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'energy'.
       * @return This builder.
       */
-    public spotify.Builder setEnergy(float value) {
+    public spotify.Builder setEnergy(java.lang.Object value) {
       validate(fields()[12], value);
       this.energy = value;
       fieldSetFlags()[12] = true;
@@ -1642,6 +1649,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearEnergy() {
+      energy = null;
       fieldSetFlags()[12] = false;
       return this;
     }
@@ -1650,7 +1658,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'instrumentalness' field.
       * @return The value.
       */
-    public float getInstrumentalness() {
+    public java.lang.Object getInstrumentalness() {
       return instrumentalness;
     }
 
@@ -1660,7 +1668,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'instrumentalness'.
       * @return This builder.
       */
-    public spotify.Builder setInstrumentalness(float value) {
+    public spotify.Builder setInstrumentalness(java.lang.Object value) {
       validate(fields()[13], value);
       this.instrumentalness = value;
       fieldSetFlags()[13] = true;
@@ -1681,6 +1689,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearInstrumentalness() {
+      instrumentalness = null;
       fieldSetFlags()[13] = false;
       return this;
     }
@@ -1689,7 +1698,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'key' field.
       * @return The value.
       */
-    public int getKey() {
+    public java.lang.Object getKey() {
       return key;
     }
 
@@ -1699,7 +1708,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'key'.
       * @return This builder.
       */
-    public spotify.Builder setKey(int value) {
+    public spotify.Builder setKey(java.lang.Object value) {
       validate(fields()[14], value);
       this.key = value;
       fieldSetFlags()[14] = true;
@@ -1720,6 +1729,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearKey() {
+      key = null;
       fieldSetFlags()[14] = false;
       return this;
     }
@@ -1728,7 +1738,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'liveness' field.
       * @return The value.
       */
-    public float getLiveness() {
+    public java.lang.Object getLiveness() {
       return liveness;
     }
 
@@ -1738,7 +1748,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'liveness'.
       * @return This builder.
       */
-    public spotify.Builder setLiveness(float value) {
+    public spotify.Builder setLiveness(java.lang.Object value) {
       validate(fields()[15], value);
       this.liveness = value;
       fieldSetFlags()[15] = true;
@@ -1759,6 +1769,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearLiveness() {
+      liveness = null;
       fieldSetFlags()[15] = false;
       return this;
     }
@@ -1767,7 +1778,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'loudness' field.
       * @return The value.
       */
-    public float getLoudness() {
+    public java.lang.Object getLoudness() {
       return loudness;
     }
 
@@ -1777,7 +1788,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'loudness'.
       * @return This builder.
       */
-    public spotify.Builder setLoudness(float value) {
+    public spotify.Builder setLoudness(java.lang.Object value) {
       validate(fields()[16], value);
       this.loudness = value;
       fieldSetFlags()[16] = true;
@@ -1798,6 +1809,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearLoudness() {
+      loudness = null;
       fieldSetFlags()[16] = false;
       return this;
     }
@@ -1806,7 +1818,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'mode' field.
       * @return The value.
       */
-    public int getMode() {
+    public java.lang.Object getMode() {
       return mode;
     }
 
@@ -1816,7 +1828,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'mode'.
       * @return This builder.
       */
-    public spotify.Builder setMode(int value) {
+    public spotify.Builder setMode(java.lang.Object value) {
       validate(fields()[17], value);
       this.mode = value;
       fieldSetFlags()[17] = true;
@@ -1837,6 +1849,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearMode() {
+      mode = null;
       fieldSetFlags()[17] = false;
       return this;
     }
@@ -1845,7 +1858,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'speechiness' field.
       * @return The value.
       */
-    public float getSpeechiness() {
+    public java.lang.Object getSpeechiness() {
       return speechiness;
     }
 
@@ -1855,7 +1868,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'speechiness'.
       * @return This builder.
       */
-    public spotify.Builder setSpeechiness(float value) {
+    public spotify.Builder setSpeechiness(java.lang.Object value) {
       validate(fields()[18], value);
       this.speechiness = value;
       fieldSetFlags()[18] = true;
@@ -1876,6 +1889,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearSpeechiness() {
+      speechiness = null;
       fieldSetFlags()[18] = false;
       return this;
     }
@@ -1884,7 +1898,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'tempo' field.
       * @return The value.
       */
-    public float getTempo() {
+    public java.lang.Object getTempo() {
       return tempo;
     }
 
@@ -1894,7 +1908,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'tempo'.
       * @return This builder.
       */
-    public spotify.Builder setTempo(float value) {
+    public spotify.Builder setTempo(java.lang.Object value) {
       validate(fields()[19], value);
       this.tempo = value;
       fieldSetFlags()[19] = true;
@@ -1915,6 +1929,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearTempo() {
+      tempo = null;
       fieldSetFlags()[19] = false;
       return this;
     }
@@ -1923,7 +1938,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'time_signature' field.
       * @return The value.
       */
-    public int getTimeSignature() {
+    public java.lang.Object getTimeSignature() {
       return time_signature;
     }
 
@@ -1933,7 +1948,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'time_signature'.
       * @return This builder.
       */
-    public spotify.Builder setTimeSignature(int value) {
+    public spotify.Builder setTimeSignature(java.lang.Object value) {
       validate(fields()[20], value);
       this.time_signature = value;
       fieldSetFlags()[20] = true;
@@ -1954,6 +1969,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearTimeSignature() {
+      time_signature = null;
       fieldSetFlags()[20] = false;
       return this;
     }
@@ -1962,7 +1978,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'valence' field.
       * @return The value.
       */
-    public float getValence() {
+    public java.lang.Object getValence() {
       return valence;
     }
 
@@ -1972,7 +1988,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'valence'.
       * @return This builder.
       */
-    public spotify.Builder setValence(float value) {
+    public spotify.Builder setValence(java.lang.Object value) {
       validate(fields()[21], value);
       this.valence = value;
       fieldSetFlags()[21] = true;
@@ -1993,6 +2009,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearValence() {
+      valence = null;
       fieldSetFlags()[21] = false;
       return this;
     }
@@ -2161,7 +2178,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'album_popularity' field.
       * @return The value.
       */
-    public int getAlbumPopularity() {
+    public java.lang.Object getAlbumPopularity() {
       return album_popularity;
     }
 
@@ -2171,7 +2188,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'album_popularity'.
       * @return This builder.
       */
-    public spotify.Builder setAlbumPopularity(int value) {
+    public spotify.Builder setAlbumPopularity(java.lang.Object value) {
       validate(fields()[26], value);
       this.album_popularity = value;
       fieldSetFlags()[26] = true;
@@ -2192,6 +2209,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearAlbumPopularity() {
+      album_popularity = null;
       fieldSetFlags()[26] = false;
       return this;
     }
@@ -2240,7 +2258,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'artist_popularity' field.
       * @return The value.
       */
-    public int getArtistPopularity() {
+    public java.lang.Object getArtistPopularity() {
       return artist_popularity;
     }
 
@@ -2250,7 +2268,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'artist_popularity'.
       * @return This builder.
       */
-    public spotify.Builder setArtistPopularity(int value) {
+    public spotify.Builder setArtistPopularity(java.lang.Object value) {
       validate(fields()[28], value);
       this.artist_popularity = value;
       fieldSetFlags()[28] = true;
@@ -2271,6 +2289,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearArtistPopularity() {
+      artist_popularity = null;
       fieldSetFlags()[28] = false;
       return this;
     }
@@ -2279,7 +2298,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Gets the value of the 'followers' field.
       * @return The value.
       */
-    public int getFollowers() {
+    public java.lang.Object getFollowers() {
       return followers;
     }
 
@@ -2289,7 +2308,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'followers'.
       * @return This builder.
       */
-    public spotify.Builder setFollowers(int value) {
+    public spotify.Builder setFollowers(java.lang.Object value) {
       validate(fields()[29], value);
       this.followers = value;
       fieldSetFlags()[29] = true;
@@ -2310,6 +2329,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @return This builder.
       */
     public spotify.Builder clearFollowers() {
+      followers = null;
       fieldSetFlags()[29] = false;
       return this;
     }
@@ -2361,34 +2381,34 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
         spotify record = new spotify();
         record.id = fieldSetFlags()[0] ? this.id : (java.lang.CharSequence) defaultValue(fields()[0]);
         record.track_name = fieldSetFlags()[1] ? this.track_name : (java.lang.CharSequence) defaultValue(fields()[1]);
-        record.disc_number = fieldSetFlags()[2] ? this.disc_number : (java.lang.Integer) defaultValue(fields()[2]);
-        record.duration = fieldSetFlags()[3] ? this.duration : (java.lang.Integer) defaultValue(fields()[3]);
-        record.explicit = fieldSetFlags()[4] ? this.explicit : (java.lang.Integer) defaultValue(fields()[4]);
+        record.disc_number = fieldSetFlags()[2] ? this.disc_number :  defaultValue(fields()[2]);
+        record.duration = fieldSetFlags()[3] ? this.duration :  defaultValue(fields()[3]);
+        record.explicit = fieldSetFlags()[4] ? this.explicit :  defaultValue(fields()[4]);
         record.audio_feature_id = fieldSetFlags()[5] ? this.audio_feature_id : (java.lang.CharSequence) defaultValue(fields()[5]);
         record.preview_url = fieldSetFlags()[6] ? this.preview_url : (java.lang.CharSequence) defaultValue(fields()[6]);
-        record.track_number = fieldSetFlags()[7] ? this.track_number : (java.lang.Integer) defaultValue(fields()[7]);
-        record.popularity = fieldSetFlags()[8] ? this.popularity : (java.lang.Integer) defaultValue(fields()[8]);
-        record.is_playable = fieldSetFlags()[9] ? this.is_playable : (java.lang.Integer) defaultValue(fields()[9]);
-        record.acousticness = fieldSetFlags()[10] ? this.acousticness : (java.lang.Float) defaultValue(fields()[10]);
-        record.danceability = fieldSetFlags()[11] ? this.danceability : (java.lang.Float) defaultValue(fields()[11]);
-        record.energy = fieldSetFlags()[12] ? this.energy : (java.lang.Float) defaultValue(fields()[12]);
-        record.instrumentalness = fieldSetFlags()[13] ? this.instrumentalness : (java.lang.Float) defaultValue(fields()[13]);
-        record.key = fieldSetFlags()[14] ? this.key : (java.lang.Integer) defaultValue(fields()[14]);
-        record.liveness = fieldSetFlags()[15] ? this.liveness : (java.lang.Float) defaultValue(fields()[15]);
-        record.loudness = fieldSetFlags()[16] ? this.loudness : (java.lang.Float) defaultValue(fields()[16]);
-        record.mode = fieldSetFlags()[17] ? this.mode : (java.lang.Integer) defaultValue(fields()[17]);
-        record.speechiness = fieldSetFlags()[18] ? this.speechiness : (java.lang.Float) defaultValue(fields()[18]);
-        record.tempo = fieldSetFlags()[19] ? this.tempo : (java.lang.Float) defaultValue(fields()[19]);
-        record.time_signature = fieldSetFlags()[20] ? this.time_signature : (java.lang.Integer) defaultValue(fields()[20]);
-        record.valence = fieldSetFlags()[21] ? this.valence : (java.lang.Float) defaultValue(fields()[21]);
+        record.track_number = fieldSetFlags()[7] ? this.track_number :  defaultValue(fields()[7]);
+        record.popularity = fieldSetFlags()[8] ? this.popularity :  defaultValue(fields()[8]);
+        record.is_playable = fieldSetFlags()[9] ? this.is_playable :  defaultValue(fields()[9]);
+        record.acousticness = fieldSetFlags()[10] ? this.acousticness :  defaultValue(fields()[10]);
+        record.danceability = fieldSetFlags()[11] ? this.danceability :  defaultValue(fields()[11]);
+        record.energy = fieldSetFlags()[12] ? this.energy :  defaultValue(fields()[12]);
+        record.instrumentalness = fieldSetFlags()[13] ? this.instrumentalness :  defaultValue(fields()[13]);
+        record.key = fieldSetFlags()[14] ? this.key :  defaultValue(fields()[14]);
+        record.liveness = fieldSetFlags()[15] ? this.liveness :  defaultValue(fields()[15]);
+        record.loudness = fieldSetFlags()[16] ? this.loudness :  defaultValue(fields()[16]);
+        record.mode = fieldSetFlags()[17] ? this.mode :  defaultValue(fields()[17]);
+        record.speechiness = fieldSetFlags()[18] ? this.speechiness :  defaultValue(fields()[18]);
+        record.tempo = fieldSetFlags()[19] ? this.tempo :  defaultValue(fields()[19]);
+        record.time_signature = fieldSetFlags()[20] ? this.time_signature :  defaultValue(fields()[20]);
+        record.valence = fieldSetFlags()[21] ? this.valence :  defaultValue(fields()[21]);
         record.album_name = fieldSetFlags()[22] ? this.album_name : (java.lang.CharSequence) defaultValue(fields()[22]);
         record.album_group = fieldSetFlags()[23] ? this.album_group : (java.lang.CharSequence) defaultValue(fields()[23]);
         record.album_type = fieldSetFlags()[24] ? this.album_type : (java.lang.CharSequence) defaultValue(fields()[24]);
         record.release_date = fieldSetFlags()[25] ? this.release_date : (java.lang.CharSequence) defaultValue(fields()[25]);
-        record.album_popularity = fieldSetFlags()[26] ? this.album_popularity : (java.lang.Integer) defaultValue(fields()[26]);
+        record.album_popularity = fieldSetFlags()[26] ? this.album_popularity :  defaultValue(fields()[26]);
         record.artist_name = fieldSetFlags()[27] ? this.artist_name : (java.lang.CharSequence) defaultValue(fields()[27]);
-        record.artist_popularity = fieldSetFlags()[28] ? this.artist_popularity : (java.lang.Integer) defaultValue(fields()[28]);
-        record.followers = fieldSetFlags()[29] ? this.followers : (java.lang.Integer) defaultValue(fields()[29]);
+        record.artist_popularity = fieldSetFlags()[28] ? this.artist_popularity :  defaultValue(fields()[28]);
+        record.followers = fieldSetFlags()[29] ? this.followers :  defaultValue(fields()[29]);
         record.genre_id = fieldSetFlags()[30] ? this.genre_id : (java.lang.CharSequence) defaultValue(fields()[30]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
@@ -2417,291 +2437,6 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
     READER$.read(this, SpecificData.getDecoder(in));
   }
 
-  @Override protected boolean hasCustomCoders() { return true; }
-
-  @Override public void customEncode(org.apache.avro.io.Encoder out)
-    throws java.io.IOException
-  {
-    out.writeString(this.id);
-
-    out.writeString(this.track_name);
-
-    out.writeInt(this.disc_number);
-
-    out.writeInt(this.duration);
-
-    out.writeInt(this.explicit);
-
-    out.writeString(this.audio_feature_id);
-
-    out.writeString(this.preview_url);
-
-    out.writeInt(this.track_number);
-
-    out.writeInt(this.popularity);
-
-    if (this.is_playable == null) {
-      out.writeIndex(1);
-      out.writeNull();
-    } else {
-      out.writeIndex(0);
-      out.writeInt(this.is_playable);
-    }
-
-    out.writeFloat(this.acousticness);
-
-    out.writeFloat(this.danceability);
-
-    out.writeFloat(this.energy);
-
-    out.writeFloat(this.instrumentalness);
-
-    out.writeInt(this.key);
-
-    out.writeFloat(this.liveness);
-
-    out.writeFloat(this.loudness);
-
-    out.writeInt(this.mode);
-
-    out.writeFloat(this.speechiness);
-
-    out.writeFloat(this.tempo);
-
-    out.writeInt(this.time_signature);
-
-    out.writeFloat(this.valence);
-
-    out.writeString(this.album_name);
-
-    out.writeString(this.album_group);
-
-    out.writeString(this.album_type);
-
-    out.writeString(this.release_date);
-
-    out.writeInt(this.album_popularity);
-
-    out.writeString(this.artist_name);
-
-    out.writeInt(this.artist_popularity);
-
-    out.writeInt(this.followers);
-
-    out.writeString(this.genre_id);
-
-  }
-
-  @Override public void customDecode(org.apache.avro.io.ResolvingDecoder in)
-    throws java.io.IOException
-  {
-    org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
-    if (fieldOrder == null) {
-      this.id = in.readString(this.id instanceof Utf8 ? (Utf8)this.id : null);
-
-      this.track_name = in.readString(this.track_name instanceof Utf8 ? (Utf8)this.track_name : null);
-
-      this.disc_number = in.readInt();
-
-      this.duration = in.readInt();
-
-      this.explicit = in.readInt();
-
-      this.audio_feature_id = in.readString(this.audio_feature_id instanceof Utf8 ? (Utf8)this.audio_feature_id : null);
-
-      this.preview_url = in.readString(this.preview_url instanceof Utf8 ? (Utf8)this.preview_url : null);
-
-      this.track_number = in.readInt();
-
-      this.popularity = in.readInt();
-
-      if (in.readIndex() != 0) {
-        in.readNull();
-        this.is_playable = null;
-      } else {
-        this.is_playable = in.readInt();
-      }
-
-      this.acousticness = in.readFloat();
-
-      this.danceability = in.readFloat();
-
-      this.energy = in.readFloat();
-
-      this.instrumentalness = in.readFloat();
-
-      this.key = in.readInt();
-
-      this.liveness = in.readFloat();
-
-      this.loudness = in.readFloat();
-
-      this.mode = in.readInt();
-
-      this.speechiness = in.readFloat();
-
-      this.tempo = in.readFloat();
-
-      this.time_signature = in.readInt();
-
-      this.valence = in.readFloat();
-
-      this.album_name = in.readString(this.album_name instanceof Utf8 ? (Utf8)this.album_name : null);
-
-      this.album_group = in.readString(this.album_group instanceof Utf8 ? (Utf8)this.album_group : null);
-
-      this.album_type = in.readString(this.album_type instanceof Utf8 ? (Utf8)this.album_type : null);
-
-      this.release_date = in.readString(this.release_date instanceof Utf8 ? (Utf8)this.release_date : null);
-
-      this.album_popularity = in.readInt();
-
-      this.artist_name = in.readString(this.artist_name instanceof Utf8 ? (Utf8)this.artist_name : null);
-
-      this.artist_popularity = in.readInt();
-
-      this.followers = in.readInt();
-
-      this.genre_id = in.readString(this.genre_id instanceof Utf8 ? (Utf8)this.genre_id : null);
-
-    } else {
-      for (int i = 0; i < 31; i++) {
-        switch (fieldOrder[i].pos()) {
-        case 0:
-          this.id = in.readString(this.id instanceof Utf8 ? (Utf8)this.id : null);
-          break;
-
-        case 1:
-          this.track_name = in.readString(this.track_name instanceof Utf8 ? (Utf8)this.track_name : null);
-          break;
-
-        case 2:
-          this.disc_number = in.readInt();
-          break;
-
-        case 3:
-          this.duration = in.readInt();
-          break;
-
-        case 4:
-          this.explicit = in.readInt();
-          break;
-
-        case 5:
-          this.audio_feature_id = in.readString(this.audio_feature_id instanceof Utf8 ? (Utf8)this.audio_feature_id : null);
-          break;
-
-        case 6:
-          this.preview_url = in.readString(this.preview_url instanceof Utf8 ? (Utf8)this.preview_url : null);
-          break;
-
-        case 7:
-          this.track_number = in.readInt();
-          break;
-
-        case 8:
-          this.popularity = in.readInt();
-          break;
-
-        case 9:
-          if (in.readIndex() != 0) {
-            in.readNull();
-            this.is_playable = null;
-          } else {
-            this.is_playable = in.readInt();
-          }
-          break;
-
-        case 10:
-          this.acousticness = in.readFloat();
-          break;
-
-        case 11:
-          this.danceability = in.readFloat();
-          break;
-
-        case 12:
-          this.energy = in.readFloat();
-          break;
-
-        case 13:
-          this.instrumentalness = in.readFloat();
-          break;
-
-        case 14:
-          this.key = in.readInt();
-          break;
-
-        case 15:
-          this.liveness = in.readFloat();
-          break;
-
-        case 16:
-          this.loudness = in.readFloat();
-          break;
-
-        case 17:
-          this.mode = in.readInt();
-          break;
-
-        case 18:
-          this.speechiness = in.readFloat();
-          break;
-
-        case 19:
-          this.tempo = in.readFloat();
-          break;
-
-        case 20:
-          this.time_signature = in.readInt();
-          break;
-
-        case 21:
-          this.valence = in.readFloat();
-          break;
-
-        case 22:
-          this.album_name = in.readString(this.album_name instanceof Utf8 ? (Utf8)this.album_name : null);
-          break;
-
-        case 23:
-          this.album_group = in.readString(this.album_group instanceof Utf8 ? (Utf8)this.album_group : null);
-          break;
-
-        case 24:
-          this.album_type = in.readString(this.album_type instanceof Utf8 ? (Utf8)this.album_type : null);
-          break;
-
-        case 25:
-          this.release_date = in.readString(this.release_date instanceof Utf8 ? (Utf8)this.release_date : null);
-          break;
-
-        case 26:
-          this.album_popularity = in.readInt();
-          break;
-
-        case 27:
-          this.artist_name = in.readString(this.artist_name instanceof Utf8 ? (Utf8)this.artist_name : null);
-          break;
-
-        case 28:
-          this.artist_popularity = in.readInt();
-          break;
-
-        case 29:
-          this.followers = in.readInt();
-          break;
-
-        case 30:
-          this.genre_id = in.readString(this.genre_id instanceof Utf8 ? (Utf8)this.genre_id : null);
-          break;
-
-        default:
-          throw new java.io.IOException("Corrupt ResolvingDecoder.");
-        }
-      }
-    }
-  }
 }
 
 
