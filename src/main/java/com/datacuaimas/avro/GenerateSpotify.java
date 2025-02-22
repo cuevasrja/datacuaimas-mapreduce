@@ -1,13 +1,18 @@
 package com.datacuaimas.avro;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 
 import org.apache.avro.Schema;
+import org.apache.avro.file.DataFileReader;
 import org.apache.avro.file.DataFileWriter;
 import org.apache.avro.generic.GenericData;
+import org.apache.avro.generic.GenericDatumReader;
 import org.apache.avro.generic.GenericRecord;
+import org.apache.avro.io.DatumReader;
 import org.apache.avro.io.DatumWriter;
 import org.apache.avro.specific.SpecificDatumWriter;
 
@@ -15,11 +20,12 @@ import com.opencsv.CSVReader;
 import com.opencsv.exceptions.CsvValidationException;
 
 public class GenerateSpotify {
-    private static final String CSV_FILE_PATH = "data/tracks-small.csv";
-    private static final String AVRO_SCHEMA_PATH = "src/main/avro/spotify.avsc";
-    private static final String PATH = "./outputSerializado/spotify.avro";
 
-    public static void main(String[] args) throws IOException, CsvValidationException {
+    public static void serializer() throws IOException, CsvValidationException {
+        String CSV_FILE_PATH = "data/tracks-small.csv";
+        String AVRO_SCHEMA_PATH = "src/main/avro/spotify.avsc";
+        String PATH = "./outputSerializado/spotify.avro";
+
         // Load Avro schema
         Schema schema = new Schema.Parser().parse(new File(AVRO_SCHEMA_PATH));
 
@@ -77,5 +83,46 @@ public class GenerateSpotify {
         }
 
         dataFileWriter.close();
+    }
+
+    public static void deserializer() throws IOException {
+        String AVRO_SCHEMA_PATH = "src/main/avro/spotify.avsc";
+        String INPUT_PATH = "./outputSerializado/spotify.avro";
+        String OUTPUT_PATH = "./outputDeserializado/spotify_deserialized.txt";
+
+        // Load Avro schema
+        Schema schema = new Schema.Parser().parse(new File(AVRO_SCHEMA_PATH));
+
+        // Open data file
+        File inputFile = new File(INPUT_PATH);
+        DatumReader<GenericRecord> datumReader = new GenericDatumReader<>(schema);
+        DataFileReader<GenericRecord> dataFileReader = new DataFileReader<>(inputFile, datumReader);
+
+        // Open output file
+        File outputFile = new File(OUTPUT_PATH);
+        if (outputFile.getParentFile() != null) {
+            outputFile.getParentFile().mkdirs();
+        }
+        if (!outputFile.exists()) {
+            outputFile.createNewFile();
+        }
+
+        // Write deserialized records to the output file
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
+            GenericRecord record = null;
+            while (dataFileReader.hasNext()) {
+                // Reuse record object by passing it to next(). This saves object allocation.
+                record = dataFileReader.next(record);
+                writer.write(record.toString());
+                writer.newLine();
+            }
+        }
+
+        dataFileReader.close();
+    }
+
+    public static void main(String[] args) throws IOException, CsvValidationException {
+        serializer();
+        deserializer();
     }
 }

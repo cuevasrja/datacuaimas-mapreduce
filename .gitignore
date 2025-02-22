@@ -44,5 +44,5 @@ nbdist/
 
 # Archivos de entrada y salida de datos
 input/
-output/
+output*/
 data/
