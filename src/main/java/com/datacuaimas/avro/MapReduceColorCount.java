@@ -24,7 +24,7 @@ import org.apache.hadoop.util.ToolRunner;
 import example.avro.User;
 
 public class MapReduceColorCount extends Configured implements Tool {
-public static class ColorCountMapper extends
+  public static class ColorCountMapper extends
       Mapper<AvroKey<User>, NullWritable, Text, IntWritable> {
 
     @Override

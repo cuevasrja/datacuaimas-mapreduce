@@ -15,7 +15,16 @@ import org.apache.avro.message.SchemaStore;
 public class User extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
   private static final long serialVersionUID = -3588479540582100558L;
 
-
+  /*
+  "{\"type\":\"record\",
+  \"name\":\"User\",
+  \"namespace\":\"example.avro\",
+  \"fields\":[
+    {\"name\":\"name\",\"type\":\"string\"},
+    {\"name\":\"favorite_number\",\"type\":[\"int\",\"null\"]},
+    {\"name\":\"favorite_color\",\"type\":[\"string\",\"null\"]}
+  ]}"
+   */
   public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"example.avro\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"favorite_number\",\"type\":[\"int\",\"null\"]},{\"name\":\"favorite_color\",\"type\":[\"string\",\"null\"]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 

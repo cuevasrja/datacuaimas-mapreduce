@@ -27,19 +27,16 @@ public class MapredColorCount extends Configured implements Tool {
       }
   }
 
-  public static class ColorCountReducer extends AvroReducer<CharSequence, Integer,
-                                                            Pair<CharSequence, Integer>> {
+  public static class ColorCountReducer extends AvroReducer<CharSequence, Integer, Pair<CharSequence, Integer>> {
     @Override
-    public void reduce(CharSequence key, Iterable<Integer> values,
-                       AvroCollector<Pair<CharSequence, Integer>> collector,
-                       Reporter reporter)
-        throws IOException {
-      int sum = 0;
-      for (Integer value : values) {
-        sum += value;
+    public void reduce(CharSequence key, Iterable<Integer> values, AvroCollector<Pair<CharSequence, Integer>> collector, Reporter reporter)
+      throws IOException {
+        int sum = 0;
+        for (Integer value : values) {
+          sum += value;
+        }
+        collector.collect(new Pair<CharSequence, Integer>(key, sum));
       }
-      collector.collect(new Pair<CharSequence, Integer>(key, sum));
-    }
   }
 
   public int run(String[] args) throws Exception {
@@ -61,8 +58,7 @@ public class MapredColorCount extends Configured implements Tool {
     // relevant config options such as input/output format, map output
     // classes, and output key class.
     AvroJob.setInputSchema(conf, User.getClassSchema());
-    AvroJob.setOutputSchema(conf, Pair.getPairSchema(Schema.create(Type.STRING),
-        Schema.create(Type.INT)));
+    AvroJob.setOutputSchema(conf, Pair.getPairSchema(Schema.create(Type.STRING), Schema.create(Type.INT)));
 
     JobClient.runJob(conf);
     return 0;

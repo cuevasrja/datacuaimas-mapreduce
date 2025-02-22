@@ -41,3 +41,7 @@ nbdist/
 # Archivos de configuración de sistema operativo
 *.swp
 *~
+
+# Archivos de entrada y salida de datos
+input/
+output/

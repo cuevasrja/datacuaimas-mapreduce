@@ -48,3 +48,9 @@ Luego, ejecutar
 ```bash
 mvn exec:java -q -Dexec.mainClass=com.datacuaimas.avro.MapredColorCount -Dexec.args="input output"
 ```
+
+Para deserilizar el archivo de salida, ejecutar
+
+```bash
+mvn exec:java -q -Dexec.mainClass=com.datacuaimas.avro.DeserializationData -Dexec.args="output"
+```
