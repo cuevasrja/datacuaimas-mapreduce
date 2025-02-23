@@ -122,7 +122,13 @@ public class GenerateSpotify {
     }
 
     public static void main(String[] args) throws IOException, CsvValidationException {
-        serializer();
-        deserializer();
+        String flag = args[0];
+        if (flag.equals("serializer")) {
+            serializer();
+        } else if (flag.equals("deserializer")) {
+            deserializer();
+        } else {
+            System.out.println("Invalid flag. Use 'serializer' or 'deserializer'.");
+        }
     }
 }

@@ -57,5 +57,8 @@ mvn exec:java -q -Dexec.mainClass=com.datacuaimas.avro.DeserializationData -Dexe
 ## Caso 3 
 
 ```bash
-mvn -q exec:java -Dexec.mainClass=com.datacuaimas.avro.GenerateSpotify
+mvn -q exec:java -Dexec.mainClass=com.datacuaimas.avro.GenerateSpotify -Dexec.args="<flag>"
 ```
+
+Donde:
+- flag: Puede ser "serializer" o "deserializer"
