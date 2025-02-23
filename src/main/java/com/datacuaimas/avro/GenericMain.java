@@ -16,19 +16,27 @@ import org.apache.avro.io.DatumReader;
 import org.apache.avro.io.DatumWriter;
 
 public class GenericMain {
+        /**
+         * Método principal que serializa y deserializa datos de usuarios en un archivo Avro.
+         * @param args
+         * @throws IOException
+         */
         public static void main(String[] args) throws IOException{
+                // Cargar el esquema de usuario desde un archivo
                 Schema schema = new Schema.Parser().parse(new File("src/main/avro/users.avsc"));          
+                // Crea un registro de usuario y lo llena con datos
                 GenericRecord user1 = new GenericData.Record(schema);
                 user1.put("name", "Alyssa");
                 user1.put("favorite_number", 256);
-                // Leave favorite color null
+                // Deja el color favorito vacío
 
+                // Crea otro registro de usuario y lo llena con datos
                 GenericRecord user2 = new GenericData.Record(schema);
                  user2.put("name", "Ben");
                 user2.put("favorite_number", 7);
                 user2.put("favorite_color", "red");
 
-                // Serialize user1 and user2 to disk
+                // Serializa los usuarios en un archivo
                 File file = new File("users.avro");
                 DatumWriter<GenericRecord> datumWriter = new GenericDatumWriter<GenericRecord>(schema);
                 DataFileWriter<GenericRecord> dataFileWriter = new DataFileWriter<GenericRecord>(datumWriter);
@@ -37,16 +45,18 @@ public class GenericMain {
                 dataFileWriter.append(user2);
                 dataFileWriter.close();
 
-                // Deserialize users from disk
+                // Deserializa los usuarios de un archivo
                 DatumReader<GenericRecord> datumReader = new GenericDatumReader<GenericRecord>(schema);
                 DataFileReader<GenericRecord> dataFileReader = new DataFileReader<GenericRecord>(file, datumReader);
                 GenericRecord user = null;
                 while (dataFileReader.hasNext()) {
-                // Reuse user object by passing it to next(). This saves us from
-                // allocating and garbage collecting many objects for files with
-                // many items.
-                user = dataFileReader.next(user);
-                System.out.println(user);
+                        // Reutiliza el objeto user, cargando los datos del siguiente registro
+                        user = dataFileReader.next(user);
+                        // Imprime el usuario en la consola
+                        System.out.println(user);
                 }
+
+                // Cerrar el lector de archivos
+                dataFileReader.close();
         }
 }

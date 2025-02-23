@@ -11,6 +11,12 @@ import java.io.File;
 import java.io.IOException;
 
 public class DeserializationData {
+    /**
+     * Deserializa los datos de un archivo Avro.
+     * @param args Argumentos de la línea de comandos. Se espera un argumento: la ruta al archivo Avro.
+     * @throws IOException Si ocurre un error al leer el archivo Avro.
+     * @see Pair
+     */
     public static void main(String[] args) {
         if (args.length != 1) {
             System.out.println("Usage: DeserializationData <avro-file>");
@@ -33,11 +39,15 @@ public class DeserializationData {
 
             // Iterar sobre los registros y deserializarlos
             while (fileReader.hasNext()) {
+                // Leer el siguiente registro
                 GenericRecord record = fileReader.next();
+                // Crear un par clave-valor y obtener los valores de la clave y el valor del registro
                 Pair<CharSequence, Integer> pair = new Pair<>(record.get("key"), record.get("value"));
+                // Imprimir el par clave-valor en la consola
                 System.out.println(pair);
             }
 
+            // Cerrar el lector de archivos
             fileReader.close();
         } catch (IOException e) {
             e.printStackTrace();
