@@ -3,7 +3,7 @@
  *
  * DO NOT EDIT DIRECTLY
  */
-package spotify.avro;
+package classes.avro;
 
 import org.apache.avro.generic.GenericArray;
 import org.apache.avro.specific.SpecificData;
@@ -14,10 +14,10 @@ import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class spotify extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = 6689312053835716127L;
+  private static final long serialVersionUID = -5658190205244089857L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"spotify\",\"namespace\":\"spotify.avro\",\"fields\":[{\"name\":\"id\",\"type\":[\"string\",\"null\"]},{\"name\":\"track_name\",\"type\":[\"string\",\"null\"]},{\"name\":\"disc_number\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"duration\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"explicit\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"audio_feature_id\",\"type\":[\"string\",\"null\"]},{\"name\":\"preview_url\",\"type\":[\"string\",\"null\"]},{\"name\":\"track_number\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"popularity\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"is_playable\",\"type\":[\"int\",\"null\",\"string\"]},{\"name\":\"acousticness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"danceability\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"energy\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"instrumentalness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"key\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"liveness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"loudness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"mode\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"speechiness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"tempo\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"time_signature\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"valence\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"album_name\",\"type\":[\"string\",\"null\"]},{\"name\":\"album_group\",\"type\":[\"string\",\"null\"]},{\"name\":\"album_type\",\"type\":[\"string\",\"null\"]},{\"name\":\"release_date\",\"type\":[\"string\",\"null\"]},{\"name\":\"album_popularity\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"artist_name\",\"type\":[\"string\",\"null\"]},{\"name\":\"artist_popularity\",\"type\":[\"int\",\"null\",\"string\"]},{\"name\":\"followers\",\"type\":[\"int\",\"null\",\"string\"]},{\"name\":\"genre_id\",\"type\":[\"string\",\"null\"]}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"spotify\",\"namespace\":\"classes.avro\",\"fields\":[{\"name\":\"id\",\"type\":[\"string\",\"null\"]},{\"name\":\"track_name\",\"type\":[\"string\",\"null\"]},{\"name\":\"disc_number\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"duration\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"explicit\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"audio_feature_id\",\"type\":[\"string\",\"null\"]},{\"name\":\"preview_url\",\"type\":[\"string\",\"null\"]},{\"name\":\"track_number\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"popularity\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"is_playable\",\"type\":[\"int\",\"null\",\"string\"]},{\"name\":\"acousticness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"danceability\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"energy\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"instrumentalness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"key\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"liveness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"loudness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"mode\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"speechiness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"tempo\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"time_signature\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"valence\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"album_name\",\"type\":[\"string\",\"null\"]},{\"name\":\"album_group\",\"type\":[\"string\",\"null\"]},{\"name\":\"album_type\",\"type\":[\"string\",\"null\"]},{\"name\":\"release_date\",\"type\":[\"string\",\"null\"]},{\"name\":\"album_popularity\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"artist_name\",\"type\":[\"string\",\"null\"]},{\"name\":\"artist_popularity\",\"type\":[\"int\",\"null\",\"string\"]},{\"name\":\"followers\",\"type\":[\"int\",\"null\",\"string\"]},{\"name\":\"genre_id\",\"type\":[\"string\",\"null\"]}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -796,8 +796,8 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * Creates a new spotify RecordBuilder.
    * @return A new spotify RecordBuilder
    */
-  public static spotify.Builder newBuilder() {
-    return new spotify.Builder();
+  public static classes.avro.spotify.Builder newBuilder() {
+    return new classes.avro.spotify.Builder();
   }
 
   /**
@@ -805,11 +805,11 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param other The existing builder to copy.
    * @return A new spotify RecordBuilder
    */
-  public static spotify.Builder newBuilder(spotify.Builder other) {
+  public static classes.avro.spotify.Builder newBuilder(classes.avro.spotify.Builder other) {
     if (other == null) {
-      return new spotify.Builder();
+      return new classes.avro.spotify.Builder();
     } else {
-      return new spotify.Builder(other);
+      return new classes.avro.spotify.Builder(other);
     }
   }
 
@@ -818,11 +818,11 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
    * @param other The existing instance to copy.
    * @return A new spotify RecordBuilder
    */
-  public static spotify.Builder newBuilder(spotify other) {
+  public static classes.avro.spotify.Builder newBuilder(classes.avro.spotify other) {
     if (other == null) {
-      return new spotify.Builder();
+      return new classes.avro.spotify.Builder();
     } else {
-      return new spotify.Builder(other);
+      return new classes.avro.spotify.Builder(other);
     }
   }
 
@@ -874,7 +874,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(spotify.Builder other) {
+    private Builder(classes.avro.spotify.Builder other) {
       super(other);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -1006,7 +1006,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
      * Creates a Builder by copying an existing spotify instance
      * @param other The existing instance to copy.
      */
-    private Builder(spotify other) {
+    private Builder(classes.avro.spotify other) {
       super(SCHEMA$, MODEL$);
       if (isValidValue(fields()[0], other.id)) {
         this.id = data().deepCopy(fields()[0].schema(), other.id);
@@ -1148,7 +1148,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'id'.
       * @return This builder.
       */
-    public spotify.Builder setId(java.lang.CharSequence value) {
+    public classes.avro.spotify.Builder setId(java.lang.CharSequence value) {
       validate(fields()[0], value);
       this.id = value;
       fieldSetFlags()[0] = true;
@@ -1168,7 +1168,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'id' field.
       * @return This builder.
       */
-    public spotify.Builder clearId() {
+    public classes.avro.spotify.Builder clearId() {
       id = null;
       fieldSetFlags()[0] = false;
       return this;
@@ -1188,7 +1188,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'track_name'.
       * @return This builder.
       */
-    public spotify.Builder setTrackName(java.lang.CharSequence value) {
+    public classes.avro.spotify.Builder setTrackName(java.lang.CharSequence value) {
       validate(fields()[1], value);
       this.track_name = value;
       fieldSetFlags()[1] = true;
@@ -1208,7 +1208,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'track_name' field.
       * @return This builder.
       */
-    public spotify.Builder clearTrackName() {
+    public classes.avro.spotify.Builder clearTrackName() {
       track_name = null;
       fieldSetFlags()[1] = false;
       return this;
@@ -1228,7 +1228,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'disc_number'.
       * @return This builder.
       */
-    public spotify.Builder setDiscNumber(java.lang.Object value) {
+    public classes.avro.spotify.Builder setDiscNumber(java.lang.Object value) {
       validate(fields()[2], value);
       this.disc_number = value;
       fieldSetFlags()[2] = true;
@@ -1248,7 +1248,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'disc_number' field.
       * @return This builder.
       */
-    public spotify.Builder clearDiscNumber() {
+    public classes.avro.spotify.Builder clearDiscNumber() {
       disc_number = null;
       fieldSetFlags()[2] = false;
       return this;
@@ -1268,7 +1268,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'duration'.
       * @return This builder.
       */
-    public spotify.Builder setDuration(java.lang.Object value) {
+    public classes.avro.spotify.Builder setDuration(java.lang.Object value) {
       validate(fields()[3], value);
       this.duration = value;
       fieldSetFlags()[3] = true;
@@ -1288,7 +1288,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'duration' field.
       * @return This builder.
       */
-    public spotify.Builder clearDuration() {
+    public classes.avro.spotify.Builder clearDuration() {
       duration = null;
       fieldSetFlags()[3] = false;
       return this;
@@ -1308,7 +1308,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'explicit'.
       * @return This builder.
       */
-    public spotify.Builder setExplicit(java.lang.Object value) {
+    public classes.avro.spotify.Builder setExplicit(java.lang.Object value) {
       validate(fields()[4], value);
       this.explicit = value;
       fieldSetFlags()[4] = true;
@@ -1328,7 +1328,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'explicit' field.
       * @return This builder.
       */
-    public spotify.Builder clearExplicit() {
+    public classes.avro.spotify.Builder clearExplicit() {
       explicit = null;
       fieldSetFlags()[4] = false;
       return this;
@@ -1348,7 +1348,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'audio_feature_id'.
       * @return This builder.
       */
-    public spotify.Builder setAudioFeatureId(java.lang.CharSequence value) {
+    public classes.avro.spotify.Builder setAudioFeatureId(java.lang.CharSequence value) {
       validate(fields()[5], value);
       this.audio_feature_id = value;
       fieldSetFlags()[5] = true;
@@ -1368,7 +1368,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'audio_feature_id' field.
       * @return This builder.
       */
-    public spotify.Builder clearAudioFeatureId() {
+    public classes.avro.spotify.Builder clearAudioFeatureId() {
       audio_feature_id = null;
       fieldSetFlags()[5] = false;
       return this;
@@ -1388,7 +1388,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'preview_url'.
       * @return This builder.
       */
-    public spotify.Builder setPreviewUrl(java.lang.CharSequence value) {
+    public classes.avro.spotify.Builder setPreviewUrl(java.lang.CharSequence value) {
       validate(fields()[6], value);
       this.preview_url = value;
       fieldSetFlags()[6] = true;
@@ -1408,7 +1408,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'preview_url' field.
       * @return This builder.
       */
-    public spotify.Builder clearPreviewUrl() {
+    public classes.avro.spotify.Builder clearPreviewUrl() {
       preview_url = null;
       fieldSetFlags()[6] = false;
       return this;
@@ -1428,7 +1428,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'track_number'.
       * @return This builder.
       */
-    public spotify.Builder setTrackNumber(java.lang.Object value) {
+    public classes.avro.spotify.Builder setTrackNumber(java.lang.Object value) {
       validate(fields()[7], value);
       this.track_number = value;
       fieldSetFlags()[7] = true;
@@ -1448,7 +1448,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'track_number' field.
       * @return This builder.
       */
-    public spotify.Builder clearTrackNumber() {
+    public classes.avro.spotify.Builder clearTrackNumber() {
       track_number = null;
       fieldSetFlags()[7] = false;
       return this;
@@ -1468,7 +1468,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'popularity'.
       * @return This builder.
       */
-    public spotify.Builder setPopularity(java.lang.Object value) {
+    public classes.avro.spotify.Builder setPopularity(java.lang.Object value) {
       validate(fields()[8], value);
       this.popularity = value;
       fieldSetFlags()[8] = true;
@@ -1488,7 +1488,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'popularity' field.
       * @return This builder.
       */
-    public spotify.Builder clearPopularity() {
+    public classes.avro.spotify.Builder clearPopularity() {
       popularity = null;
       fieldSetFlags()[8] = false;
       return this;
@@ -1508,7 +1508,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'is_playable'.
       * @return This builder.
       */
-    public spotify.Builder setIsPlayable(java.lang.Object value) {
+    public classes.avro.spotify.Builder setIsPlayable(java.lang.Object value) {
       validate(fields()[9], value);
       this.is_playable = value;
       fieldSetFlags()[9] = true;
@@ -1528,7 +1528,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'is_playable' field.
       * @return This builder.
       */
-    public spotify.Builder clearIsPlayable() {
+    public classes.avro.spotify.Builder clearIsPlayable() {
       is_playable = null;
       fieldSetFlags()[9] = false;
       return this;
@@ -1548,7 +1548,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'acousticness'.
       * @return This builder.
       */
-    public spotify.Builder setAcousticness(java.lang.Object value) {
+    public classes.avro.spotify.Builder setAcousticness(java.lang.Object value) {
       validate(fields()[10], value);
       this.acousticness = value;
       fieldSetFlags()[10] = true;
@@ -1568,7 +1568,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'acousticness' field.
       * @return This builder.
       */
-    public spotify.Builder clearAcousticness() {
+    public classes.avro.spotify.Builder clearAcousticness() {
       acousticness = null;
       fieldSetFlags()[10] = false;
       return this;
@@ -1588,7 +1588,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'danceability'.
       * @return This builder.
       */
-    public spotify.Builder setDanceability(java.lang.Object value) {
+    public classes.avro.spotify.Builder setDanceability(java.lang.Object value) {
       validate(fields()[11], value);
       this.danceability = value;
       fieldSetFlags()[11] = true;
@@ -1608,7 +1608,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'danceability' field.
       * @return This builder.
       */
-    public spotify.Builder clearDanceability() {
+    public classes.avro.spotify.Builder clearDanceability() {
       danceability = null;
       fieldSetFlags()[11] = false;
       return this;
@@ -1628,7 +1628,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'energy'.
       * @return This builder.
       */
-    public spotify.Builder setEnergy(java.lang.Object value) {
+    public classes.avro.spotify.Builder setEnergy(java.lang.Object value) {
       validate(fields()[12], value);
       this.energy = value;
       fieldSetFlags()[12] = true;
@@ -1648,7 +1648,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'energy' field.
       * @return This builder.
       */
-    public spotify.Builder clearEnergy() {
+    public classes.avro.spotify.Builder clearEnergy() {
       energy = null;
       fieldSetFlags()[12] = false;
       return this;
@@ -1668,7 +1668,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'instrumentalness'.
       * @return This builder.
       */
-    public spotify.Builder setInstrumentalness(java.lang.Object value) {
+    public classes.avro.spotify.Builder setInstrumentalness(java.lang.Object value) {
       validate(fields()[13], value);
       this.instrumentalness = value;
       fieldSetFlags()[13] = true;
@@ -1688,7 +1688,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'instrumentalness' field.
       * @return This builder.
       */
-    public spotify.Builder clearInstrumentalness() {
+    public classes.avro.spotify.Builder clearInstrumentalness() {
       instrumentalness = null;
       fieldSetFlags()[13] = false;
       return this;
@@ -1708,7 +1708,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'key'.
       * @return This builder.
       */
-    public spotify.Builder setKey(java.lang.Object value) {
+    public classes.avro.spotify.Builder setKey(java.lang.Object value) {
       validate(fields()[14], value);
       this.key = value;
       fieldSetFlags()[14] = true;
@@ -1728,7 +1728,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'key' field.
       * @return This builder.
       */
-    public spotify.Builder clearKey() {
+    public classes.avro.spotify.Builder clearKey() {
       key = null;
       fieldSetFlags()[14] = false;
       return this;
@@ -1748,7 +1748,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'liveness'.
       * @return This builder.
       */
-    public spotify.Builder setLiveness(java.lang.Object value) {
+    public classes.avro.spotify.Builder setLiveness(java.lang.Object value) {
       validate(fields()[15], value);
       this.liveness = value;
       fieldSetFlags()[15] = true;
@@ -1768,7 +1768,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'liveness' field.
       * @return This builder.
       */
-    public spotify.Builder clearLiveness() {
+    public classes.avro.spotify.Builder clearLiveness() {
       liveness = null;
       fieldSetFlags()[15] = false;
       return this;
@@ -1788,7 +1788,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'loudness'.
       * @return This builder.
       */
-    public spotify.Builder setLoudness(java.lang.Object value) {
+    public classes.avro.spotify.Builder setLoudness(java.lang.Object value) {
       validate(fields()[16], value);
       this.loudness = value;
       fieldSetFlags()[16] = true;
@@ -1808,7 +1808,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'loudness' field.
       * @return This builder.
       */
-    public spotify.Builder clearLoudness() {
+    public classes.avro.spotify.Builder clearLoudness() {
       loudness = null;
       fieldSetFlags()[16] = false;
       return this;
@@ -1828,7 +1828,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'mode'.
       * @return This builder.
       */
-    public spotify.Builder setMode(java.lang.Object value) {
+    public classes.avro.spotify.Builder setMode(java.lang.Object value) {
       validate(fields()[17], value);
       this.mode = value;
       fieldSetFlags()[17] = true;
@@ -1848,7 +1848,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'mode' field.
       * @return This builder.
       */
-    public spotify.Builder clearMode() {
+    public classes.avro.spotify.Builder clearMode() {
       mode = null;
       fieldSetFlags()[17] = false;
       return this;
@@ -1868,7 +1868,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'speechiness'.
       * @return This builder.
       */
-    public spotify.Builder setSpeechiness(java.lang.Object value) {
+    public classes.avro.spotify.Builder setSpeechiness(java.lang.Object value) {
       validate(fields()[18], value);
       this.speechiness = value;
       fieldSetFlags()[18] = true;
@@ -1888,7 +1888,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'speechiness' field.
       * @return This builder.
       */
-    public spotify.Builder clearSpeechiness() {
+    public classes.avro.spotify.Builder clearSpeechiness() {
       speechiness = null;
       fieldSetFlags()[18] = false;
       return this;
@@ -1908,7 +1908,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'tempo'.
       * @return This builder.
       */
-    public spotify.Builder setTempo(java.lang.Object value) {
+    public classes.avro.spotify.Builder setTempo(java.lang.Object value) {
       validate(fields()[19], value);
       this.tempo = value;
       fieldSetFlags()[19] = true;
@@ -1928,7 +1928,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'tempo' field.
       * @return This builder.
       */
-    public spotify.Builder clearTempo() {
+    public classes.avro.spotify.Builder clearTempo() {
       tempo = null;
       fieldSetFlags()[19] = false;
       return this;
@@ -1948,7 +1948,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'time_signature'.
       * @return This builder.
       */
-    public spotify.Builder setTimeSignature(java.lang.Object value) {
+    public classes.avro.spotify.Builder setTimeSignature(java.lang.Object value) {
       validate(fields()[20], value);
       this.time_signature = value;
       fieldSetFlags()[20] = true;
@@ -1968,7 +1968,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'time_signature' field.
       * @return This builder.
       */
-    public spotify.Builder clearTimeSignature() {
+    public classes.avro.spotify.Builder clearTimeSignature() {
       time_signature = null;
       fieldSetFlags()[20] = false;
       return this;
@@ -1988,7 +1988,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'valence'.
       * @return This builder.
       */
-    public spotify.Builder setValence(java.lang.Object value) {
+    public classes.avro.spotify.Builder setValence(java.lang.Object value) {
       validate(fields()[21], value);
       this.valence = value;
       fieldSetFlags()[21] = true;
@@ -2008,7 +2008,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'valence' field.
       * @return This builder.
       */
-    public spotify.Builder clearValence() {
+    public classes.avro.spotify.Builder clearValence() {
       valence = null;
       fieldSetFlags()[21] = false;
       return this;
@@ -2028,7 +2028,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'album_name'.
       * @return This builder.
       */
-    public spotify.Builder setAlbumName(java.lang.CharSequence value) {
+    public classes.avro.spotify.Builder setAlbumName(java.lang.CharSequence value) {
       validate(fields()[22], value);
       this.album_name = value;
       fieldSetFlags()[22] = true;
@@ -2048,7 +2048,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'album_name' field.
       * @return This builder.
       */
-    public spotify.Builder clearAlbumName() {
+    public classes.avro.spotify.Builder clearAlbumName() {
       album_name = null;
       fieldSetFlags()[22] = false;
       return this;
@@ -2068,7 +2068,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'album_group'.
       * @return This builder.
       */
-    public spotify.Builder setAlbumGroup(java.lang.CharSequence value) {
+    public classes.avro.spotify.Builder setAlbumGroup(java.lang.CharSequence value) {
       validate(fields()[23], value);
       this.album_group = value;
       fieldSetFlags()[23] = true;
@@ -2088,7 +2088,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'album_group' field.
       * @return This builder.
       */
-    public spotify.Builder clearAlbumGroup() {
+    public classes.avro.spotify.Builder clearAlbumGroup() {
       album_group = null;
       fieldSetFlags()[23] = false;
       return this;
@@ -2108,7 +2108,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'album_type'.
       * @return This builder.
       */
-    public spotify.Builder setAlbumType(java.lang.CharSequence value) {
+    public classes.avro.spotify.Builder setAlbumType(java.lang.CharSequence value) {
       validate(fields()[24], value);
       this.album_type = value;
       fieldSetFlags()[24] = true;
@@ -2128,7 +2128,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'album_type' field.
       * @return This builder.
       */
-    public spotify.Builder clearAlbumType() {
+    public classes.avro.spotify.Builder clearAlbumType() {
       album_type = null;
       fieldSetFlags()[24] = false;
       return this;
@@ -2148,7 +2148,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'release_date'.
       * @return This builder.
       */
-    public spotify.Builder setReleaseDate(java.lang.CharSequence value) {
+    public classes.avro.spotify.Builder setReleaseDate(java.lang.CharSequence value) {
       validate(fields()[25], value);
       this.release_date = value;
       fieldSetFlags()[25] = true;
@@ -2168,7 +2168,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'release_date' field.
       * @return This builder.
       */
-    public spotify.Builder clearReleaseDate() {
+    public classes.avro.spotify.Builder clearReleaseDate() {
       release_date = null;
       fieldSetFlags()[25] = false;
       return this;
@@ -2188,7 +2188,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'album_popularity'.
       * @return This builder.
       */
-    public spotify.Builder setAlbumPopularity(java.lang.Object value) {
+    public classes.avro.spotify.Builder setAlbumPopularity(java.lang.Object value) {
       validate(fields()[26], value);
       this.album_popularity = value;
       fieldSetFlags()[26] = true;
@@ -2208,7 +2208,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'album_popularity' field.
       * @return This builder.
       */
-    public spotify.Builder clearAlbumPopularity() {
+    public classes.avro.spotify.Builder clearAlbumPopularity() {
       album_popularity = null;
       fieldSetFlags()[26] = false;
       return this;
@@ -2228,7 +2228,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'artist_name'.
       * @return This builder.
       */
-    public spotify.Builder setArtistName(java.lang.CharSequence value) {
+    public classes.avro.spotify.Builder setArtistName(java.lang.CharSequence value) {
       validate(fields()[27], value);
       this.artist_name = value;
       fieldSetFlags()[27] = true;
@@ -2248,7 +2248,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'artist_name' field.
       * @return This builder.
       */
-    public spotify.Builder clearArtistName() {
+    public classes.avro.spotify.Builder clearArtistName() {
       artist_name = null;
       fieldSetFlags()[27] = false;
       return this;
@@ -2268,7 +2268,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'artist_popularity'.
       * @return This builder.
       */
-    public spotify.Builder setArtistPopularity(java.lang.Object value) {
+    public classes.avro.spotify.Builder setArtistPopularity(java.lang.Object value) {
       validate(fields()[28], value);
       this.artist_popularity = value;
       fieldSetFlags()[28] = true;
@@ -2288,7 +2288,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'artist_popularity' field.
       * @return This builder.
       */
-    public spotify.Builder clearArtistPopularity() {
+    public classes.avro.spotify.Builder clearArtistPopularity() {
       artist_popularity = null;
       fieldSetFlags()[28] = false;
       return this;
@@ -2308,7 +2308,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'followers'.
       * @return This builder.
       */
-    public spotify.Builder setFollowers(java.lang.Object value) {
+    public classes.avro.spotify.Builder setFollowers(java.lang.Object value) {
       validate(fields()[29], value);
       this.followers = value;
       fieldSetFlags()[29] = true;
@@ -2328,7 +2328,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'followers' field.
       * @return This builder.
       */
-    public spotify.Builder clearFollowers() {
+    public classes.avro.spotify.Builder clearFollowers() {
       followers = null;
       fieldSetFlags()[29] = false;
       return this;
@@ -2348,7 +2348,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * @param value The value of 'genre_id'.
       * @return This builder.
       */
-    public spotify.Builder setGenreId(java.lang.CharSequence value) {
+    public classes.avro.spotify.Builder setGenreId(java.lang.CharSequence value) {
       validate(fields()[30], value);
       this.genre_id = value;
       fieldSetFlags()[30] = true;
@@ -2368,7 +2368,7 @@ public class spotify extends org.apache.avro.specific.SpecificRecordBase impleme
       * Clears the value of the 'genre_id' field.
       * @return This builder.
       */
-    public spotify.Builder clearGenreId() {
+    public classes.avro.spotify.Builder clearGenreId() {
       genre_id = null;
       fieldSetFlags()[30] = false;
       return this;

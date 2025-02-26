@@ -8,7 +8,7 @@ import org.apache.avro.file.DataFileWriter;
 import org.apache.avro.io.DatumWriter;
 import org.apache.avro.specific.SpecificDatumWriter;
 
-import example.avro.User;
+import classes.avro.User;
 
 public class GenerateData {
   // Colores de los usuarios (incluyendo nulo que representa sin color)

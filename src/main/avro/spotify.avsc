@@ -1,4 +1,4 @@
-{"namespace": "spotify.avro",
+{"namespace": "classes.avro",
  "type": "record",
  "name": "spotify",
  "fields": [

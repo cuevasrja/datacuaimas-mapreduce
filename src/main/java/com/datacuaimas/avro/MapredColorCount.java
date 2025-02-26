@@ -13,7 +13,7 @@ import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.mapred.*;
 import org.apache.hadoop.util.*;
 
-import example.avro.User;
+import classes.avro.User;
 
 public class MapredColorCount extends Configured implements Tool {
 
