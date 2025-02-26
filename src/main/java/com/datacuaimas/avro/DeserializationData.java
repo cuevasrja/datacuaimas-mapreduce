@@ -9,22 +9,18 @@ import org.apache.avro.mapred.Pair;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DeserializationData {
+
     /**
      * Deserializa los datos de un archivo Avro.
-     * @param args Argumentos de la línea de comandos. Se espera un argumento: la ruta al archivo Avro.
-     * @throws IOException Si ocurre un error al leer el archivo Avro.
-     * @see Pair
+     * @param avroFilePath La ruta al archivo Avro.
+     * @return Una lista de registros deserializados.
      */
-    public static void main(String[] args) {
-        if (args.length != 1) {
-            System.out.println("Usage: DeserializationData <avro-file>");
-            System.exit(1);
-        }
-
-        String avroFilePath = args[0];
-
+    public static List<String> getRecords(String avroFilePath) {
+        List<String> records = new ArrayList<>();
         try {
             // Definir el esquema clave-valor
             String schemaString = "{\"type\":\"record\",\"name\":\"Pair\",\"fields\":[{\"name\":\"key\",\"type\":\"string\"},{\"name\":\"value\",\"type\":\"int\"}]}";
@@ -44,13 +40,35 @@ public class DeserializationData {
                 // Crear un par clave-valor y obtener los valores de la clave y el valor del registro
                 Pair<CharSequence, Integer> pair = new Pair<>(record.get("key"), record.get("value"));
                 // Imprimir el par clave-valor en la consola
-                System.out.println(pair);
+                records.add(pair.toString());
             }
 
             // Cerrar el lector de archivos
             fileReader.close();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        return records;
+    }
+
+    /**
+     * Deserializa los datos de un archivo Avro.
+     * @param args Argumentos de la línea de comandos. Se espera un argumento: la ruta al archivo Avro.
+     * @throws IOException Si ocurre un error al leer el archivo Avro.
+     * @see Pair
+     */
+    public static void main(String[] args) {
+        if (args.length != 1) {
+            System.out.println("Usage: DeserializationData <avro-file>");
+            System.exit(1);
+        }
+
+        String avroFilePath = args[0];
+
+        List<String> records = getRecords(avroFilePath);
+
+        for (String record : records) {
+            System.out.println(record);
         }
     }
 }

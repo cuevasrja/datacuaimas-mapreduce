@@ -1,12 +1,16 @@
 package com.datacuaimas.avro;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.List;
 
 import org.apache.avro.*;
 import org.apache.avro.Schema.Type;
 import org.apache.avro.mapred.*;
+import org.apache.commons.io.FileUtils;
 import org.apache.hadoop.conf.*;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.mapred.*;
 import org.apache.hadoop.util.*;
 
@@ -48,6 +52,10 @@ public class MapredColorCount extends Configured implements Tool {
     JobConf conf = new JobConf(getConf(), MapredColorCount.class);
     conf.setJobName("colorcount");
 
+    // If Output directory already exists, delete it
+    Path outputPath = new Path(args[1]);
+    outputPath.getFileSystem(conf).delete(outputPath, true);
+
     FileInputFormat.setInputPaths(conf, new Path(args[0]));
     FileOutputFormat.setOutputPath(conf, new Path(args[1]));
 
@@ -66,6 +74,25 @@ public class MapredColorCount extends Configured implements Tool {
 
   public static void main(String[] args) throws Exception {
     int res = ToolRunner.run(new Configuration(), new MapredColorCount(), args);
+
+    if (res == 0) {
+      File outputDir = new File(args[1]);
+      File[] outputFiles = outputDir.listFiles();
+      for (File outputFile : outputFiles) {
+        if (outputFile.getName().endsWith(".avro")) {
+          String textName = outputFile.getName().replace(".avro", ".txt");
+          // Deserializar los datos del archivo Avro. 
+          List<String> records = DeserializationData.getRecords(outputFile.getAbsolutePath());
+          // Escribir los registros deserializados en un archivo de texto.
+          File textFile = new File(outputFile.getParent(), textName);
+          FileUtils.writeLines(textFile, records);
+        }
+      }
+      System.out.println("Job executed successfully");
+    } else {
+      System.out.println("Job failed");
+    }
+
     System.exit(res);
   }
 }
