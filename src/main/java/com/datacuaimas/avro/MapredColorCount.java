@@ -10,7 +10,6 @@ import org.apache.avro.mapred.*;
 import org.apache.commons.io.FileUtils;
 import org.apache.hadoop.conf.*;
 import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.NullWritable;
 import org.apache.hadoop.mapred.*;
 import org.apache.hadoop.util.*;
 
@@ -43,6 +42,12 @@ public class MapredColorCount extends Configured implements Tool {
       }
   }
 
+  /**
+   * The run() method is called (indirectly) from main(), and contains all the job
+   * configuration and Hadoop job submission.
+   * @param args The command line arguments
+   * @return 0 if the Hadoop job completes successfully, 1 if not
+   */
   public int run(String[] args) throws Exception {
     if (args.length != 2) {
       System.err.println("Usage: MapredColorCount <input path> <output path>");
@@ -72,6 +77,11 @@ public class MapredColorCount extends Configured implements Tool {
     return 0;
   }
 
+  /**
+   * The main method specifies the Hadoop job configuration and starts the job.
+   * @param args
+   * @throws Exception
+   */
   public static void main(String[] args) throws Exception {
     int res = ToolRunner.run(new Configuration(), new MapredColorCount(), args);
 

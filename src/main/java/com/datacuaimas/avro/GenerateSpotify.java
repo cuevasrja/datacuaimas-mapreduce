@@ -21,7 +21,13 @@ import com.opencsv.exceptions.CsvValidationException;
 
 public class GenerateSpotify {
 
+    /**
+     * Serializes the data from a CSV file to an Avro file.
+     * @throws IOException If an I/O error occurs.
+     * @throws CsvValidationException If a CSV validation error occurs.
+     */
     public static void serializer() throws IOException, CsvValidationException {
+        // Paths
         String CSV_FILE_PATH = "data/tracks-small.csv";
         String AVRO_SCHEMA_PATH = "src/main/avro/spotify.avsc";
         String PATH = "./outputSerializado/spotify.avro";
@@ -31,9 +37,11 @@ public class GenerateSpotify {
 
         // Open data file
         File file = new File(PATH);
+        // If the parent directories don't exist, create them
         if (file.getParentFile() != null) {
             file.getParentFile().mkdirs();
         }
+        // If the file doesn't exist, create it
         DatumWriter<GenericRecord> datumWriter = new SpecificDatumWriter<>(schema);
         DataFileWriter<GenericRecord> dataFileWriter = new DataFileWriter<>(datumWriter);
         dataFileWriter.create(schema, file);
@@ -41,6 +49,8 @@ public class GenerateSpotify {
         // Read CSV file
         try (CSVReader csvReader = new CSVReader(new FileReader(CSV_FILE_PATH))) {
             String[] nextRecord = csvReader.readNext();
+            // Skip the header row of the CSV file
+            // Take the next row as the first record
             while ((nextRecord = csvReader.readNext()) != null) {
                 
                 // Create a GenericRecord using the schema
@@ -77,15 +87,22 @@ public class GenerateSpotify {
                 record.put("followers", nextRecord[29].isEmpty() ? null :  Integer.parseInt(nextRecord[29]));
                 record.put("genre_id", nextRecord[30].isEmpty() ? null :  nextRecord[30]);
 
+                // Serialize the record to the Avro file
                 dataFileWriter.append(record);
+                // Print the record to the console
                 System.out.println(record);
             }
         }
-
+        // Close the Avro file
         dataFileWriter.close();
     }
 
+    /**
+     * Deserializes the data from an Avro file to a text file.
+     * @throws IOException If an I/O error occurs.
+     */
     public static void deserializer() throws IOException {
+        // Paths
         String AVRO_SCHEMA_PATH = "src/main/avro/spotify.avsc";
         String INPUT_PATH = "./outputSerializado/spotify.avro";
         String OUTPUT_PATH = "./outputDeserializado/spotify_deserialized.txt";
@@ -100,9 +117,11 @@ public class GenerateSpotify {
 
         // Open output file
         File outputFile = new File(OUTPUT_PATH);
+        // If the parent directories don't exist, create them
         if (outputFile.getParentFile() != null) {
             outputFile.getParentFile().mkdirs();
         }
+        // If the file doesn't exist, create it
         if (!outputFile.exists()) {
             outputFile.createNewFile();
         }
@@ -118,6 +137,7 @@ public class GenerateSpotify {
             }
         }
 
+        // Close the Avro file
         dataFileReader.close();
     }
 
