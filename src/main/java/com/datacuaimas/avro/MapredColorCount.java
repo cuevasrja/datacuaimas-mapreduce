@@ -18,6 +18,13 @@ import classes.avro.User;
 public class MapredColorCount extends Configured implements Tool {
 
   public static class ColorCountMapper extends AvroMapper<User, Pair<CharSequence, Integer>> {
+    /**
+     * Maps an input record to a set of intermediate key-value pairs.
+     * @param user The input record
+     * @param collector The collector to which the output key-value pairs are written
+     * @param reporter Facility to report progress
+     * @throws IOException
+     */
     @Override
     public void map(User user, AvroCollector<Pair<CharSequence, Integer>> collector, Reporter reporter)
         throws IOException {
@@ -31,6 +38,15 @@ public class MapredColorCount extends Configured implements Tool {
   }
 
   public static class ColorCountReducer extends AvroReducer<CharSequence, Integer, Pair<CharSequence, Integer>> {
+  
+    /**
+     * Reduce the values for a key to a single output value.
+     * @param key The key for which the values are being passed.
+     * @param values The values for the given key.
+     * @param collector The collector to which the output should be written.
+     * @param reporter Facility to report progress.
+     * @throws IOException
+     */
     @Override
     public void reduce(CharSequence key, Iterable<Integer> values, AvroCollector<Pair<CharSequence, Integer>> collector, Reporter reporter)
       throws IOException {

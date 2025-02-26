@@ -27,6 +27,14 @@ public class MapReduceColorCount extends Configured implements Tool {
   public static class ColorCountMapper extends
       Mapper<AvroKey<User>, NullWritable, Text, IntWritable> {
 
+    /**
+     * Maps an input record to a set of intermediate key-value pairs.
+     * @param key The input key
+     * @param value The input value
+     * @param context The context to which the output key-value pairs are written
+     * @throws IOException
+     * @throws InterruptedException
+     */
     @Override
     public void map(AvroKey<User> key, NullWritable value, Context context)
         throws IOException, InterruptedException {
@@ -42,9 +50,16 @@ public class MapReduceColorCount extends Configured implements Tool {
   public static class ColorCountReducer extends
       Reducer<Text, IntWritable, AvroKey<CharSequence>, AvroValue<Integer>> {
 
+    /**
+     * Reduce the values for a key to a single output value.
+     * @param key The key for which the values are being passed.
+     * @param values The values for the given key.
+     * @param context The context to which the output should be written.
+     * @throws IOException
+     * @throws InterruptedException
+     */
     @Override
-    public void reduce(Text key, Iterable<IntWritable> values,
-        Context context) throws IOException, InterruptedException {
+    public void reduce(Text key, Iterable<IntWritable> values, Context context) throws IOException, InterruptedException {
 
       int sum = 0;
       for (IntWritable value : values) {
@@ -54,6 +69,12 @@ public class MapReduceColorCount extends Configured implements Tool {
     }
   }
 
+  /**
+   * Runs the MapReduce job.
+   * @param args Arguments to the job
+   * @return 0 if the job completes successfully, 1 otherwise
+   * @throws Exception If an error occurs
+   */
   public int run(String[] args) throws Exception {
     if (args.length != 2) {
       System.err.println("Usage: MapReduceColorCount <input path> <output path>");
@@ -81,6 +102,11 @@ public class MapReduceColorCount extends Configured implements Tool {
     return (job.waitForCompletion(true) ? 0 : 1);
   }
 
+  /**
+   * Main method for running the job.
+   * @param args
+   * @throws Exception
+   */
   public static void main(String[] args) throws Exception {
     int res = ToolRunner.run(new MapReduceColorCount(), args);
     System.exit(res);
