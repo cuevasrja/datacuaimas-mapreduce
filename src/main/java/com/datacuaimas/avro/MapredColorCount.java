@@ -1,18 +1,16 @@
 package com.datacuaimas.avro;
 
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.List;
 
 import org.apache.avro.*;
 import org.apache.avro.Schema.Type;
-import org.apache.avro.generic.GenericRecord;
 import org.apache.avro.mapred.*;
-import org.apache.commons.io.FileUtils;
 import org.apache.hadoop.conf.*;
 import org.apache.hadoop.fs.FSDataOutputStream;
+import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.mapred.*;
@@ -105,23 +103,23 @@ public class MapredColorCount extends Configured implements Tool {
    */
   public static void main(String[] args) throws Exception {
     int res = ToolRunner.run(new Configuration(), new MapredColorCount(), args);
+    Configuration conf = new Configuration();
+    FileSystem fs = FileSystem.get(conf);
 
     if (res == 0) {
-      File outputDir = new File(args[1]);
-      File[] outputFiles = outputDir.listFiles();
-      for (File outputFile : outputFiles) {
-        if (outputFile.getName().endsWith(".avro")) {
-          String textName = args[1] + "/output.txt";
-          // Deserializar los datos del archivo Avro. 
-          List<String> records = DeserializationData.getRecords(outputFile.getAbsolutePath());
+      Path outputDir = new Path(args[1]);
+      FileStatus[] outputFiles = fs.listStatus(outputDir);
+      for (FileStatus outputFile : outputFiles) {
+        if (outputFile.getPath().getName().endsWith("avro")) {
+          // Deserializar los datos del archivo Avro.
+          // Remove the file:// prefix from the
+          String route = outputFile.getPath().toString().replace("file://", "").replace(".avro", ".txt");
+          List<String> records = DeserializationData.getRecords(route);
           // Escribir los registros deserializados en un archivo de texto.
-          // File textFile = new File(outputFile.getParent(), textName);
-          // FileUtils.writeLines(textFile, records);
-          Configuration conf = new Configuration();
-          FileSystem fs = FileSystem.get(conf);
-          Path outputPath = new Path(outputDir + "/" + textName);
+          System.out.println("Aqui no funciona");
+          Path outputPath = new Path(route);
           if (fs.exists(outputPath)) {
-              fs.delete(outputPath, true);
+            fs.delete(outputPath, true);
           }
           FSDataOutputStream outputStream = fs.create(outputPath);
           try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"))) {
