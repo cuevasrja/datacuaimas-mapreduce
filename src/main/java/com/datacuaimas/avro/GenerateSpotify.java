@@ -4,6 +4,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.List;
 
 import org.apache.avro.Schema;
@@ -17,6 +18,7 @@ import org.apache.avro.mapred.FsInput;
 import org.apache.avro.specific.SpecificDatumWriter;
 import org.apache.commons.io.FileUtils;
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.Text;
@@ -138,22 +140,19 @@ public class GenerateSpotify {
         if (fs.exists(outputPath)) {
             fs.delete(outputPath, true);
         }
-        File outputFile = new File(OUTPUT_PATH);
-        // Ensure the parent directories exist
-        if (outputFile.getParentFile() != null) {
-            outputFile.getParentFile().mkdirs();
-        }
-        System.out.println("Aqui no");
-    
-        // Write deserialized records to the output file
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
+        FSDataOutputStream outputStream = fs.create(outputPath);
+
+        // Write deserialized records to the output file in HDFS
+        try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"))) {
             GenericRecord record = null;
             while (dataFileReader.hasNext()) {
                 // Reuse record object by passing it to next(). This saves object allocation.
                 record = dataFileReader.next(record);
-                FileUtils.writeStringToFile(outputFile, record.toString() + "\n", "UTF-8", true);
+                writer.write(record.toString());
+                writer.newLine();
             }
         }
+
         // Close the Avro file
         dataFileReader.close();
     
