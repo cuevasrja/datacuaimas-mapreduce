@@ -20,8 +20,12 @@ public class GenericMain {
          * @throws IOException
          */
         public static void main(String[] args) throws IOException{
+                if (args.length != 1) {
+                        System.err.println("Uso: GenericMain <archivo-avro>");
+                        System.exit(1);
+                }
                 // Cargar el esquema de usuario desde un archivo
-                Schema schema = new Schema.Parser().parse(new File("src/main/avro/users.avsc"));          
+                Schema schema = new Schema.Parser().parse(new File(args[0]));          
                 // Crea un registro de usuario y lo llena con datos
                 GenericRecord user1 = new GenericData.Record(schema);
                 user1.put("name", "Alyssa");

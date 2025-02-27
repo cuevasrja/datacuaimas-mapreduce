@@ -27,7 +27,7 @@ mvn clean compile
 Para ejecutar el caso 1 se debe ejecutar
 
 ```bash
-mvn -q exec:java -Dexec.mainClass=com.datacuaimas.avro.GenericMain
+mvn -q exec:java -Dexec.mainClass=com.datacuaimas.avro.GenericMain "src/main/avro/users.avsc"
 ```
 
 ## Caso 2
