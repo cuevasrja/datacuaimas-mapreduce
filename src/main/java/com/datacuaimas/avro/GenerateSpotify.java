@@ -17,7 +17,9 @@ import org.apache.avro.generic.GenericData;
 import org.apache.avro.generic.GenericDatumReader;
 import org.apache.avro.generic.GenericRecord;
 import org.apache.avro.io.DatumReader;
+import org.apache.avro.mapred.FsInput;
 import org.apache.avro.specific.SpecificDatumWriter;
+import org.apache.commons.io.FileUtils;
 import org.apache.hadoop.conf.Configuration;
 
 import com.opencsv.exceptions.CsvValidationException;
@@ -111,9 +113,9 @@ public class GenerateSpotify {
      */
     public static void deserializer() throws IOException {
         // Paths
-        String AVRO_SCHEMA_PATH = "/user/hadoop/src/main/avro/spotify.avsc";
-        String INPUT_PATH = "/user/hadoop/outputSerializado/spotify.avro";
-        String OUTPUT_PATH = "/user/hadoop/outputDeserializado/spotify_deserialized.txt";
+        String AVRO_SCHEMA_PATH = "src/main/avro/spotify.avsc";
+        String INPUT_PATH = "./outputSerializado/spotify.avro";
+        String OUTPUT_PATH = "./outputDeserializado/spotify_deserialized.txt";
 
         // Load Avro schema
         Schema schema;
@@ -124,20 +126,20 @@ public class GenerateSpotify {
         }
 
         // Open data file
-        File inputFile = new File(INPUT_PATH);
+        Configuration conf = new Configuration();
+        FileSystem fs = FileSystem.get(conf);
+        Path inputPath = new Path(INPUT_PATH);
         DatumReader<GenericRecord> datumReader = new GenericDatumReader<>(schema);
-        DataFileReader<GenericRecord> dataFileReader = new DataFileReader<>(inputFile, datumReader);
+        FsInput fsInput = new FsInput(inputPath, conf);
+        DataFileReader<GenericRecord> dataFileReader = new DataFileReader<>(fsInput, datumReader);
 
         // Open output file
-        File outputFile = new File(OUTPUT_PATH);
-        // If the parent directories don't exist, create them
-        if (outputFile.getParentFile() != null) {
-            outputFile.getParentFile().mkdirs();
+        String filename = new File(OUTPUT_PATH).getName();
+        File outputFile = new File(filename);
+        if (outputFile.exists()) {
+            outputFile.delete();
         }
-        // If the file doesn't exist, create it
-        if (!outputFile.exists()) {
-            outputFile.createNewFile();
-        }
+        outputFile.createNewFile();
 
         // Write deserialized records to the output file
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
@@ -145,13 +147,13 @@ public class GenerateSpotify {
             while (dataFileReader.hasNext()) {
                 // Reuse record object by passing it to next(). This saves object allocation.
                 record = dataFileReader.next(record);
-                writer.write(record.toString());
-                writer.newLine();
+                FileUtils.writeStringToFile(outputFile, record.toString() + "\n", "UTF-8", true);
             }
         }
-
         // Close the Avro file
         dataFileReader.close();
+
+        System.out.println("Deserialized records written to " + OUTPUT_PATH);
     }
 
     public static void main(String[] args) throws IOException, CsvValidationException {
