@@ -111,7 +111,7 @@ public class MapredColorCount extends Configured implements Tool {
       File[] outputFiles = outputDir.listFiles();
       for (File outputFile : outputFiles) {
         if (outputFile.getName().endsWith(".avro")) {
-          String textName = outputFile.getName().replace(".avro", ".txt");
+          String textName = args[1] + "/output.txt";
           // Deserializar los datos del archivo Avro. 
           List<String> records = DeserializationData.getRecords(outputFile.getAbsolutePath());
           // Escribir los registros deserializados en un archivo de texto.
