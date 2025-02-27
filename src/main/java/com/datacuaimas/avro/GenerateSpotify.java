@@ -28,9 +28,9 @@ public class GenerateSpotify {
      */
     public static void serializer() throws IOException, CsvValidationException {
         // Paths
-        String CSV_FILE_PATH = "data/tracks-small.csv";
-        String AVRO_SCHEMA_PATH = "src/main/avro/spotify.avsc";
-        String PATH = "./outputSerializado/spotify.avro";
+        String CSV_FILE_PATH = "/user/hadoop/data/tracks-small.csv";
+        String AVRO_SCHEMA_PATH = "/user/hadoop/src/main/avro/spotify.avsc";
+        String PATH = "/user/hadoop/outputSerializado/spotify.avro";
 
         // Load Avro schema
         Schema schema;
@@ -108,9 +108,9 @@ public class GenerateSpotify {
      */
     public static void deserializer() throws IOException {
         // Paths
-        String AVRO_SCHEMA_PATH = "src/main/avro/spotify.avsc";
-        String INPUT_PATH = "./outputSerializado/spotify.avro";
-        String OUTPUT_PATH = "./outputDeserializado/spotify_deserialized.txt";
+        String AVRO_SCHEMA_PATH = "/user/hadoop/src/main/avro/spotify.avsc";
+        String INPUT_PATH = "/user/hadoop/outputSerializado/spotify.avro";
+        String OUTPUT_PATH = "/user/hadoop/outputDeserializado/spotify_deserialized.txt";
 
         // Load Avro schema
         Schema schema;
