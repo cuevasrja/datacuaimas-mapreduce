@@ -6,10 +6,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
-import org.apache.hadoop.fs.Path;
-import org.apache.hadoop.io.Text;
-import org.apache.hadoop.fs.FileSystem;
-
 import org.apache.avro.Schema;
 import org.apache.avro.file.DataFileReader;
 import org.apache.avro.file.DataFileWriter;
@@ -21,6 +17,9 @@ import org.apache.avro.mapred.FsInput;
 import org.apache.avro.specific.SpecificDatumWriter;
 import org.apache.commons.io.FileUtils;
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.Text;
 
 import com.opencsv.exceptions.CsvValidationException;
 
@@ -116,7 +115,7 @@ public class GenerateSpotify {
         String AVRO_SCHEMA_PATH = "src/main/avro/spotify.avsc";
         String INPUT_PATH = "./outputSerializado/spotify.avro";
         String OUTPUT_PATH = "./outputDeserializado/spotify_deserialized.txt";
-
+    
         // Load Avro schema
         Schema schema;
         try {
@@ -124,21 +123,28 @@ public class GenerateSpotify {
         } catch(IOException e){
             schema = new Schema.Parser().parse("{\"type\":\"record\",\"name\":\"spotify\",\"namespace\":\"classes.avro\",\"fields\":[{\"name\":\"id\",\"type\":[\"string\",\"null\"]},{\"name\":\"track_name\",\"type\":[\"string\",\"null\"]},{\"name\":\"disc_number\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"duration\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"explicit\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"audio_feature_id\",\"type\":[\"string\",\"null\"]},{\"name\":\"preview_url\",\"type\":[\"string\",\"null\"]},{\"name\":\"track_number\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"popularity\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"is_playable\",\"type\":[\"int\",\"null\",\"string\"]},{\"name\":\"acousticness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"danceability\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"energy\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"instrumentalness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"key\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"liveness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"loudness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"mode\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"speechiness\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"tempo\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"time_signature\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"valence\",\"type\":[\"float\",\"string\",\"null\"]},{\"name\":\"album_name\",\"type\":[\"string\",\"null\"]},{\"name\":\"album_group\",\"type\":[\"string\",\"null\"]},{\"name\":\"album_type\",\"type\":[\"string\",\"null\"]},{\"name\":\"release_date\",\"type\":[\"string\",\"null\"]},{\"name\":\"album_popularity\",\"type\":[\"int\",\"string\",\"null\"]},{\"name\":\"artist_name\",\"type\":[\"string\",\"null\"]},{\"name\":\"artist_popularity\",\"type\":[\"int\",\"null\",\"string\"]},{\"name\":\"followers\",\"type\":[\"int\",\"null\",\"string\"]},{\"name\":\"genre_id\",\"type\":[\"string\",\"null\"]}]}");
         }
-
+    
         // Open data file
         Configuration conf = new Configuration();
         Path inputPath = new Path(INPUT_PATH);
         DatumReader<GenericRecord> datumReader = new GenericDatumReader<>(schema);
         FsInput fsInput = new FsInput(inputPath, conf);
         DataFileReader<GenericRecord> dataFileReader = new DataFileReader<>(fsInput, datumReader);
-
+    
+        System.out.println("Aqui funciona");
         // Open output file
-        File outputFile = new File(OUTPUT_PATH);
-        if (outputFile.exists()) {
-            outputFile.delete();
+        FileSystem fs = FileSystem.get(conf);
+        Path outputPath = new Path(OUTPUT_PATH);
+        if (fs.exists(outputPath)) {
+            fs.delete(outputPath, true);
         }
-        outputFile.createNewFile();
-
+        File outputFile = new File(OUTPUT_PATH);
+        // Ensure the parent directories exist
+        if (outputFile.getParentFile() != null) {
+            outputFile.getParentFile().mkdirs();
+        }
+        System.out.println("Aqui no");
+    
         // Write deserialized records to the output file
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile))) {
             GenericRecord record = null;
@@ -150,7 +156,7 @@ public class GenerateSpotify {
         }
         // Close the Avro file
         dataFileReader.close();
-
+    
         System.out.println("Deserialized records written to " + OUTPUT_PATH);
     }
 
