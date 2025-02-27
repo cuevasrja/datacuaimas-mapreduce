@@ -31,7 +31,8 @@ public class NcdcRecordParser {
             reader.readLine();
             // Read the rest of the records
             while ((line = reader.readLine()) != null) {
-                String[] fields = line.split(",");
+                // Use a more robust CSV parsing method
+                String[] fields = parseCSVLine(line);
                 records.add(fields);
             }
         } finally {
@@ -39,5 +40,28 @@ public class NcdcRecordParser {
             IOUtils.closeStream(inputStream);
         }
         return records;
+    }
+
+    private String[] parseCSVLine(String line) {
+        List<String> fields = new ArrayList<>();
+        StringBuilder currentField = new StringBuilder();
+        boolean inQuotes = false;
+
+        for (char c : line.toCharArray()) {
+            if (c == '"') {
+                inQuotes = !inQuotes; // Toggle the inQuotes flag
+            } else if (c == ',' && !inQuotes) {
+                // If we encounter a comma and we're not inside quotes, it's the end of a field
+                fields.add(currentField.toString());
+                currentField.setLength(0); // Clear the current field
+            } else {
+                // Otherwise, just add the character to the current field
+                currentField.append(c);
+            }
+        }
+        // Add the last field
+        fields.add(currentField.toString());
+
+        return fields.toArray(new String[0]);
     }
 }
