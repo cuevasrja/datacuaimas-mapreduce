@@ -1,14 +1,19 @@
 package com.datacuaimas.avro;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.util.List;
 
 import org.apache.avro.*;
 import org.apache.avro.Schema.Type;
+import org.apache.avro.generic.GenericRecord;
 import org.apache.avro.mapred.*;
 import org.apache.commons.io.FileUtils;
 import org.apache.hadoop.conf.*;
+import org.apache.hadoop.fs.FSDataOutputStream;
+import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.mapred.*;
 import org.apache.hadoop.util.*;
@@ -110,8 +115,21 @@ public class MapredColorCount extends Configured implements Tool {
           // Deserializar los datos del archivo Avro. 
           List<String> records = DeserializationData.getRecords(outputFile.getAbsolutePath());
           // Escribir los registros deserializados en un archivo de texto.
-          File textFile = new File(outputFile.getParent(), textName);
-          FileUtils.writeLines(textFile, records);
+          // File textFile = new File(outputFile.getParent(), textName);
+          // FileUtils.writeLines(textFile, records);
+          Configuration conf = new Configuration();
+          FileSystem fs = FileSystem.get(conf);
+          Path outputPath = new Path(outputDir + "/" + textName);
+          if (fs.exists(outputPath)) {
+              fs.delete(outputPath, true);
+          }
+          FSDataOutputStream outputStream = fs.create(outputPath);
+          try (BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"))) {
+            for (String line : records) {
+              writer.write(line.toString());
+              writer.newLine();
+            }
+          }
         }
       }
       System.out.println("Job executed successfully");

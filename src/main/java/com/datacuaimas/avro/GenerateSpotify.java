@@ -133,7 +133,6 @@ public class GenerateSpotify {
         FsInput fsInput = new FsInput(inputPath, conf);
         DataFileReader<GenericRecord> dataFileReader = new DataFileReader<>(fsInput, datumReader);
     
-        System.out.println("Aqui funciona");
         // Open output file
         FileSystem fs = FileSystem.get(conf);
         Path outputPath = new Path(OUTPUT_PATH);
