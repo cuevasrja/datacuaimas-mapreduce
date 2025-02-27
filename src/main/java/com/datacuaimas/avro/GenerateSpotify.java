@@ -127,15 +127,13 @@ public class GenerateSpotify {
 
         // Open data file
         Configuration conf = new Configuration();
-        FileSystem fs = FileSystem.get(conf);
         Path inputPath = new Path(INPUT_PATH);
         DatumReader<GenericRecord> datumReader = new GenericDatumReader<>(schema);
         FsInput fsInput = new FsInput(inputPath, conf);
         DataFileReader<GenericRecord> dataFileReader = new DataFileReader<>(fsInput, datumReader);
 
         // Open output file
-        String filename = new File(OUTPUT_PATH).getName();
-        File outputFile = new File(filename);
+        File outputFile = new File(OUTPUT_PATH);
         if (outputFile.exists()) {
             outputFile.delete();
         }
