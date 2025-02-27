@@ -25,7 +25,12 @@ public class GenericMain {
                         System.exit(1);
                 }
                 // Cargar el esquema de usuario desde un archivo
-                Schema schema = new Schema.Parser().parse(new File(args[0]));          
+                Schema schema;
+                try{
+                        schema = new Schema.Parser().parse(new File(args[0]));
+                }catch(IOException e){
+                        schema = new Schema.Parser().parse("{\"type\":\"record\",\"name\":\"User\",\"namespace\":\"classes.avro\",\"fields\":[{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"favorite_number\",\"type\":[\"int\",\"null\"]},{\"name\":\"favorite_color\",\"type\":[\"string\",\"null\"]}]}");
+                }
                 // Crea un registro de usuario y lo llena con datos
                 GenericRecord user1 = new GenericData.Record(schema);
                 user1.put("name", "Alyssa");
